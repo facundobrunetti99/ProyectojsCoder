@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <link rel="stylesheet" href="./estilos/miestilo.css">
+    <link rel="shortcut icon" href="/images/img19.jpg">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <title>Tienda de computadoras</title>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav1">
+            <div class="nav__logo">
+                <img src="/images/img19.jpg" alt="" class="nav__log--img">
+            </div>
+
+            <div class="nav__divcont">
+                <ul class="nav__divcont__ul">
+                    <li class="nav__divcont__ul__li">
+                        <a href="#" class="nav__ul__li--home"><svg class="nav__svg" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(51, 255, 128, 1);transform: scaleX(-1); msFilter:progid:DXImageTransform.Microsoft.BasicImage(rotation=0, mirror=1);"><path d="M5 22h14a2 2 0 0 0 2-2v-9a1 1 0 0 0-.29-.71l-8-8a1 1 0 0 0-1.41 0l-8 8A1 1 0 0 0 3 11v9a2 2 0 0 0 2 2zm5-2v-5h4v5zm-5-8.59 7-7 7 7V20h-3v-5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v5H5z"></path></svg></a>
+                        <a href="#" class="nav__ul__li--a">Inicio</a>
+                    </li>
+                    <li class="nav__divcont__ul__li">
+                        <a href="#" class="nav__ul__li--home"><svg class="nav__svg" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(51, 255, 128, 1);transform: scaleY(-1); msFilter:progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1);"><path d="M14 3H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2z"></path><path d="M21 19v-9a2 2 0 0 0-2-2h-1v8a2 2 0 0 1-2 2H8v1a2 2 0 0 0 2 2h9a2 2 0 0 0 2-2z"></path></svg></a>
+                        <a href="#" class="nav__ul__li--a">Productos</a>              
+                    </li>
+                    <li class="nav__divcont__ul__li">
+                        <a href="#" class="nav__ul__li--home"><svg class="nav__svg" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(51, 255, 128, 1);transform: msFilter"><path d="M20 2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2zm-6 2.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM19 15H9v-.25C9 12.901 11.254 11 14 11s5 1.901 5 3.75V15z"></path><path d="M4 8H2v12c0 1.103.897 2 2 2h12v-2H4V8z"></path></svg></a>
+                        <a href="#" class="nav__ul__li--a">Nososotros</a>
+                    </li>
+                    <li class="nav__divcont__ul__li">
+                       <button class="button__cart" href="#" class="nav__divcont__li--shop"><svg class="nav__svg" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(51, 255, 128, 1);transform: msFilter"><path d="M5 22h14c1.103 0 2-.897 2-2V9a1 1 0 0 0-1-1h-3V7c0-2.757-2.243-5-5-5S7 4.243 7 7v1H4a1 1 0 0 0-1 1v11c0 1.103.897 2 2 2zM9 7c0-1.654 1.346-3 3-3s3 1.346 3 3v1H9V7zm-4 3h2v2h2v-2h6v2h2v-2h2l.002 10H5V10z"></path></svg></button> 
+                       <div class="cartMain"></div>
+                    </li>
+                </ul>
+            </div>
+           
+            <div class="nav__button">
+                <input class="nav__button--input" type="nav__input__search" placeholder="Nombre Producto">
+                <button class="nav__button__buscar"> Buscar</button>
+            </div>
+
+        </nav>
+    </header>
+
+    <main class="main">
+        <div class="main__title">
+            <div class="main__title__fondo"> <img src="/images/img24.jpg" alt="" class="main__title--fondo"></div>
+            <h1 class="main__tittle">Componenetes computacionales</h1>
+            <h2 class="main__subtitle">Computacion</h2>
+        </div>
+        
+
+        <article class="conteiner contenedor-article row">
+            
+        
+        </article>
+
+
+
+
+        <article class="conteiner conteiner__cart" id="cartAdd" >
+                <div class="conteiner__cart--caract">
+                    <h3 class="conteiner__cart--caract--title">Nombre productos</h3>
+                    <h3 class="conteiner__cart--titleprice">Precio</h3>    
+                    <h3 class="conteiner__cart--cantidad">Cantidad</h3> 
+                    <h3 class="conteiner__cartt--titleprice">Eliminar</h3>   
+                </div>
+           
+                
+
+                   
+
+        </article>
+        <div class="total__carrito"><p class="texto__precio"></p></div>
+        
+    </main>
+    <footer class="footer">
+
+
+    
+    </footer>
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <script>
+        AOS.init();
+        </script>
+
+        <script src="main.js">
+
+
+        </script>
+</body>
+</html>

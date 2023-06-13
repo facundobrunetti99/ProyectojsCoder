@@ -178,13 +178,6 @@ Productos.forEach((product,i)=>{
 </div>`
 seleccionCarrito.appendChild(divDelProducto);
 })
-
-
-
-
-
-
-
 //INICIO DE AGREGAR AL CARRITO PUSH CARRITO
 const carritoAgregar=document.querySelector('.conteiner conteiner__cart');
 
@@ -208,10 +201,15 @@ function addTocart(indice,i){
   carritoDibujar(carrito[index]);
   sumaCarrito();
   }
-
+  
+  cambiarNum()
 }
 
-
+function cambiarNum(){
+  const addtocartNumber=document.querySelector('.numCart_cant');
+  const tItem=carrito.length;
+    addtocartNumber.innerHTML=`<p>${tItem}</p> `
+}
 
 //AGREGAR HTML AL CARRITO
 const selecionCart=document.querySelector('.conteiner__cart')
@@ -252,6 +250,8 @@ function carritoDibujar(data){
    
     }
 
+   
+
   })
 
 
@@ -280,6 +280,7 @@ function eliminarItemCart(idItem,posicionCarrito,cant){
                const divElminar=titulo.closest('.conteiner__cart--item');
                divElminar.remove()
                carrito.splice(i,1);
+               cambiarNum()
               sumaCarrito()
           }
        })  
@@ -304,7 +305,7 @@ function eliminarItemCart(idItem,posicionCarrito,cant){
 
 //CAMBIAR LA CANTIDAD DEL VALUE
 
-function cambiarValue(cantidad, id){
+function cambiarValue(){
     const valueALL=document.querySelectorAll(".cantidad__cart--item");
     valueALL.forEach((element)=>{
 
@@ -328,3 +329,47 @@ function cambiarValue(cantidad, id){
     }
 
 }
+
+
+
+
+function showCart(){
+ 
+  const it=document.getElementById('conteinertodo')
+  let a=it.style.display='';
+  
+
+ 
+}
+
+function showCart1(){
+
+  const it=document.getElementById('conteinertodo')
+  let a=it.style.display='none';
+}
+
+
+
+
+
+function buscarItem(){
+  const contenido=document.querySelector('.nav__button--input')
+  const textoAbuscar=contenido.value.toLocaleLowerCase();
+  const titulos=document.querySelectorAll('.card--title')
+ 
+  titulos.forEach((T)=>{
+   let tituloArray=T.textContent.toLocaleLowerCase();
+   let valor=tituloArray.includes(textoAbuscar)
+    if(textoAbuscar.length>=3){
+        if(!valor){
+          const div=T.closest('.contendor--card')
+          div.style.display='none';
+        }
+      }else{
+        const div=T.closest('.contendor--card')
+        div.style.display='';
+      }
+  })
+
+}
+

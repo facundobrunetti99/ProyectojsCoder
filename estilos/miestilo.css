@@ -112,8 +112,8 @@ body{
 .main{
    width: 100%;
    height: 100%;
-   display: flex;
-   flex-direction: column;
+   display: grid;
+
 }
 
 .main__title{
@@ -222,11 +222,21 @@ body{
 /*INICIO DEL CARRITO */
 
 .conteiner__cart{
-    
+  
     width: 90%;
-    
     margin: auto;
    
+}
+
+.eliminar__cart{
+    width: 30px;
+    background-color: #175e17;
+    border: none;
+    color: #fff;
+    padding: 5px;
+    font-size: 17px;
+    position: absolute;
+    margin-left: 138px;
 }
 .conteiner__cart--caract{
     
@@ -247,6 +257,7 @@ body{
 }
 
 .conteiner__cart--item{
+      background-color: #fff;
     border: 1px solid #175e17;
     border-top: none;
     justify-items: center;
@@ -304,12 +315,20 @@ body{
     color: #fff;
 }
 
-.precioHTML{
-    padding: 5px;
-    
+
+
+
+.numCart_cant{
+    position: absolute;
+    text-align: center;
+    background-color: red;
+   font-size: 12px;
+   color: #fff;
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    margin-left: -8px;
 }
-
-
 
 
 

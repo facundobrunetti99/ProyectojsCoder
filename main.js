@@ -134,8 +134,9 @@ let Productos = [
     price: 8300,
   },
 ];
-
+const TotalHTML = document.querySelector(".texto__precio");
 let carrito = [];
+localStorageItem();
 //INICIO DE INGRESAR TODO A LA PAGINA
 const seleccionCarrito = document.querySelector(".conteiner");
 Productos.forEach((product, i) => {
@@ -158,10 +159,15 @@ Productos.forEach((product, i) => {
   </div>
 </div>`;
   seleccionCarrito.appendChild(divDelProducto);
+
+
 });
+
+
+
+
 //INICIO DE AGREGAR AL CARRITO PUSH CARRITO
 const carritoAgregar = document.querySelector(".conteiner conteiner__cart");
-
 function addTocart(i) {
 
   Toastify({
@@ -180,10 +186,15 @@ function addTocart(i) {
     onClick: function () {}, // Callback after click
   }).showToast();
 
+ 
+
   let posicion = i;
   index = carrito.findIndex((element) => {
     return element.id === Productos[i].id;
   });
+ 
+ 
+
   
 
  
@@ -193,34 +204,69 @@ function addTocart(i) {
     carrito.push(productoAgregar);
     carritoDibujar(productoAgregar);
     sumaCarrito();
-    const item=JSON.stringify(productoAgregar)
-    localStorage.setItem(`itemCarrito${i}`,item)
-    let a=localStorage.length;
+    const cart=JSON.stringify(carrito);
+    localStorage.setItem("carrito",cart)
+    
   
   } else {
     let cantI=carrito[index].cant += 1;
     carritoDibujar(carrito[index]);
     sumaCarrito();
-    const item1=localStorage.getItem(`itemCarrito${i}`)
-    const itemObject=JSON.parse(item1)
-    itemObject.cant=cantI;
-    const itemStorage=JSON.stringify(itemObject)
-    localStorage.setItem(`itemCarrito${i}`,itemStorage)
+    const actualizarCart=JSON.parse(localStorage.getItem("carrito"));
+    actualizarCart[index].cant=cantI
+    const item=JSON.stringify(actualizarCart)
+    localStorage.setItem("carrito", item);
+
+   
   }
 
   cambiarNum();
+
 }
 
+function localStorageItem(){
+
+
+ 
+  const selecionCart = document.querySelector(".conteiner__cart");
+  let produtLS;
+  produtLS=localStorage.getItem("carrito");
+  let CartLS=JSON.parse(produtLS);
+  carrito=CartLS;
+
+  carrito.forEach((element)=>{
+    const div = document.createElement("div");
+    div.classList.add("conteiner__cart--item");
+    div.innerHTML = `
+    <div class="conteiner--title--img">
+    <img src="${element.img}" alt="" class="img__cart--item">
+        <p class="title__cart--item"><b>${element.name}</b></p>
+    </div>
+    <p class="precio__cart--item"><b>$${element.price}</b></p>
+  
+    <input type="number" class="cantidad__cart--item" value="${element.cant}">
+    <button class="eliminar__cart--item" onClick="eliminarItemCart(${element.id},${element.cant})">X</button>
+    `;
+      selecionCart.appendChild(div);
+      
+  })
+
+  cambiarNum();
+  sumaCarrito();
+}
 function cambiarNum() {
   const addtocartNumber = document.querySelector(".numCart_cant");
   const tItem = carrito.length;
   addtocartNumber.innerHTML = `<p>${tItem}</p> `;
 }
 
+
+
 //AGREGAR HTML AL CARRITO
 const selecionCart = document.querySelector(".conteiner__cart");
 
-function carritoDibujar(data) {
+function carritoDibujar(data){
+
   const div = document.createElement("div");
   div.classList.add("conteiner__cart--item");
   const title = selecionCart.querySelectorAll(".title__cart--item");
@@ -253,7 +299,7 @@ function carritoDibujar(data) {
 }
 
 //SUMA TOTAL
-const TotalHTML = document.querySelector(".texto__precio");
+
 function sumaCarrito() {
   let total = 0;
   carrito.forEach((element) => {

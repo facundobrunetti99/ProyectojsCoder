@@ -93,7 +93,7 @@ let Productos = [
   },
 
   {
-    id: 150,
+    id:15,
     name: "Teclado Mecanico pink",
     img: "./images/img1.jpg",
     price: 21800,
@@ -128,14 +128,15 @@ let Productos = [
   },
 
   {
-    id: 20,
+    id: 0,
     name: "Teclado Black/White",
     img: "./images/img4.jpg",
     price: 8300,
   },
 ];
-
+const TotalHTML = document.querySelector(".texto__precio");
 let carrito = [];
+localStorageItem();
 //INICIO DE INGRESAR TODO A LA PAGINA
 const seleccionCarrito = document.querySelector(".conteiner");
 Productos.forEach((product, i) => {
@@ -154,15 +155,21 @@ Productos.forEach((product, i) => {
   <div class="card-body">
     <h5 class="card--title">${product.name}</h5>
     <p class="card--text">$ ${product.price}</p>
-    <button class="button--card" onClick="addTocart(${product.id},${i})">Comprar</button>
+    <button class="button--card" onClick="addTocart(${i})">Comprar</button>
   </div>
 </div>`;
   seleccionCarrito.appendChild(divDelProducto);
+
+
 });
+
+
+
+
 //INICIO DE AGREGAR AL CARRITO PUSH CARRITO
 const carritoAgregar = document.querySelector(".conteiner conteiner__cart");
-
 function addTocart(i) {
+
   Toastify({
     text: "Producto agregado!",
     duration: 3000,
@@ -173,44 +180,92 @@ function addTocart(i) {
     position: "right", // `left`, `center` or `right`
     stopOnFocus: true, // Prevents dismissing of toast on hover
     style: {
-      background: "linear-gradient(90deg, rgba(101,181,94,1) 0%, rgba(48,200,61,1) 35%, rgba(12,47,8,1) 100%)",
+      background:
+        "linear-gradient(90deg, rgba(101,181,94,1) 0%, rgba(48,200,61,1) 35%, rgba(12,47,8,1) 100%)",
     },
-    onClick: function(){} // Callback after click
+    onClick: function () {}, // Callback after click
   }).showToast();
 
-
+ 
 
   let posicion = i;
   index = carrito.findIndex((element) => {
     return element.id === Productos[i].id;
   });
+ 
+ 
 
+  
+
+ 
   if (index === -1) {
     const productoAgregar = Productos[posicion];
     productoAgregar.cant = 1;
     carrito.push(productoAgregar);
     carritoDibujar(productoAgregar);
     sumaCarrito();
+    const cart=JSON.stringify(carrito);
+    localStorage.setItem("carrito",cart)
+    
+  
   } else {
-    carrito[index].cant += 1;
+    let cantI=carrito[index].cant += 1;
     carritoDibujar(carrito[index]);
     sumaCarrito();
+    const actualizarCart=JSON.parse(localStorage.getItem("carrito"));
+    actualizarCart[index].cant=cantI
+    const item=JSON.stringify(actualizarCart)
+    localStorage.setItem("carrito", item);
+
+   
   }
 
   cambiarNum();
+
 }
 
+function localStorageItem(){
+
+
+ 
+  const selecionCart = document.querySelector(".conteiner__cart");
+  let produtLS;
+  produtLS=localStorage.getItem("carrito");
+  let CartLS=JSON.parse(produtLS);
+  carrito=CartLS;
+
+  carrito.forEach((element)=>{
+    const div = document.createElement("div");
+    div.classList.add("conteiner__cart--item");
+    div.innerHTML = `
+    <div class="conteiner--title--img">
+    <img src="${element.img}" alt="" class="img__cart--item">
+        <p class="title__cart--item"><b>${element.name}</b></p>
+    </div>
+    <p class="precio__cart--item"><b>$${element.price}</b></p>
+  
+    <input type="number" class="cantidad__cart--item" value="${element.cant}">
+    <button class="eliminar__cart--item" onClick="eliminarItemCart(${element.id},${element.cant})">X</button>
+    `;
+      selecionCart.appendChild(div);
+      
+  })
+
+  cambiarNum();
+  sumaCarrito();
+}
 function cambiarNum() {
   const addtocartNumber = document.querySelector(".numCart_cant");
   const tItem = carrito.length;
   addtocartNumber.innerHTML = `<p>${tItem}</p> `;
 }
 
+
+
 //AGREGAR HTML AL CARRITO
 const selecionCart = document.querySelector(".conteiner__cart");
 
-function carritoDibujar(data) {
-
+function carritoDibujar(data){
 
   const div = document.createElement("div");
   div.classList.add("conteiner__cart--item");
@@ -244,7 +299,7 @@ function carritoDibujar(data) {
 }
 
 //SUMA TOTAL
-const TotalHTML = document.querySelector(".texto__precio");
+
 function sumaCarrito() {
   let total = 0;
   carrito.forEach((element) => {
@@ -253,21 +308,17 @@ function sumaCarrito() {
   TotalHTML.innerHTML = `<b class="precioHTML">TOTAL $${total}</b>
                             <button class="button__comprarAddCart">Comprar</button>`;
 
-                            const button1=document.querySelector('.button__comprarAddCart')
-                            console.log(button1)
-  button1.addEventListener('click',()=>{
-
+  const button1 = document.querySelector(".button__comprarAddCart");
+  
+  button1.addEventListener("click", () => {
     Swal.fire({
-      position: 'center',
-      icon: 'success',
+      position: "center",
+      icon: "success",
       title: `Muchas gracias por su compra!`,
       showConfirmButton: false,
-      timer: 2000
-    })
-    
-  })
-
-
+      timer: 2000,
+    });
+  });
 }
 
 //FUNCION ELIMINAR ITEMS DE UN CARRITO

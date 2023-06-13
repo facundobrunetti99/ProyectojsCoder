@@ -162,15 +162,31 @@ Productos.forEach((product, i) => {
 //INICIO DE AGREGAR AL CARRITO PUSH CARRITO
 const carritoAgregar = document.querySelector(".conteiner conteiner__cart");
 
-function addTocart(indice, i) {
-  let ina = indice;
-  let ia = i;
+function addTocart(i) {
+  Toastify({
+    text: "Producto agregado!",
+    duration: 3000,
+    destination: "https://github.com/apvarun/toastify-js",
+    newWindow: true,
+    close: true,
+    gravity: "top", // `top` or `bottom`
+    position: "right", // `left`, `center` or `right`
+    stopOnFocus: true, // Prevents dismissing of toast on hover
+    style: {
+      background: "linear-gradient(90deg, rgba(101,181,94,1) 0%, rgba(48,200,61,1) 35%, rgba(12,47,8,1) 100%)",
+    },
+    onClick: function(){} // Callback after click
+  }).showToast();
+
+
+
+  let posicion = i;
   index = carrito.findIndex((element) => {
     return element.id === Productos[i].id;
   });
 
   if (index === -1) {
-    const productoAgregar = Productos[ia];
+    const productoAgregar = Productos[posicion];
     productoAgregar.cant = 1;
     carrito.push(productoAgregar);
     carritoDibujar(productoAgregar);
@@ -194,10 +210,11 @@ function cambiarNum() {
 const selecionCart = document.querySelector(".conteiner__cart");
 
 function carritoDibujar(data) {
+
+
   const div = document.createElement("div");
   div.classList.add("conteiner__cart--item");
   const title = selecionCart.querySelectorAll(".title__cart--item");
-
   carrito.forEach((element, i) => {
     if (data.cant > 1) {
       title.forEach((titles) => {
@@ -233,10 +250,27 @@ function sumaCarrito() {
   carrito.forEach((element) => {
     total = element.price * element.cant + total;
   });
-  TotalHTML.innerHTML = `<b class="precioHTML">TOTAL $${total}</b>`;
+  TotalHTML.innerHTML = `<b class="precioHTML">TOTAL $${total}</b>
+                            <button class="button__comprarAddCart">Comprar</button>`;
+
+                            const button1=document.querySelector('.button__comprarAddCart')
+                            console.log(button1)
+  button1.addEventListener('click',()=>{
+
+    Swal.fire({
+      position: 'center',
+      icon: 'success',
+      title: `Muchas gracias por su compra!`,
+      showConfirmButton: false,
+      timer: 2000
+    })
+    
+  })
+
+
 }
 
-//FUNCION ELIMAR ITEMS DE UN CARRITO
+//FUNCION ELIMINAR ITEMS DE UN CARRITO
 function eliminarItemCart(idItem, posicionCarrito, cant) {
   const title = selecionCart.querySelectorAll(".title__cart--item");
 
@@ -295,13 +329,13 @@ function cambiarValue() {
 }
 
 function showCart() {
-  const it = document.getElementById("conteinertodo");
-  let a = (it.style.display = "");
+  const div = document.getElementById("conteinertodo");
+  div.style.display = "";
 }
 
 function showCart1() {
-  const it = document.getElementById("conteinertodo");
-  let a = (it.style.display = "none");
+  const div = document.getElementById("conteinertodo");
+  div.style.display = "none";
 }
 
 function buscarItem() {

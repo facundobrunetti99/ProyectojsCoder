@@ -3,14 +3,14 @@ let Productos=[
   
   {id:1,
     name:"RTX 3090",
-    img:"/images/img6.jpg",
+    img:"./images/img6.jpg",
     price:325000,
 
     },
     {
     id:2,
     name:"GTX 2070",
-    img:"/images/img7.jpg",
+    img:"./images/img7.jpg",
     price:223000,
 
     },
@@ -18,7 +18,7 @@ let Productos=[
     {
     id:3,
     name:"GTX 1060",
-    img:"/images/img8.jpg",
+    img:"./images/img8.jpg",
     price:65000,
 
     },
@@ -26,7 +26,7 @@ let Productos=[
     {
     id:4,
     name:"GTX 2090",
-    img:"/images/img9.jpg",
+    img:"./images/img9.jpg",
     price:128000,
 
     },
@@ -34,7 +34,7 @@ let Productos=[
     {
     id:5,
     name:"RX 750 TI",
-    img:"/images/img10.jpg",
+    img:"./images/img10.jpg",
     price:37000,
 
     },
@@ -42,14 +42,14 @@ let Productos=[
     {
     id:6,
     name:"Gabinete Gamer 330i",
-    img:"/images/img11.jpg",
+    img:"./images/img11.jpg",
     price:44000,
     },
     
     {
     id:7,
     name:"Gabinete gamer 44001",
-    img:"/images/img12.jpg",
+    img:"./images/img12.jpg",
     price:16500,
 
     },
@@ -57,7 +57,7 @@ let Productos=[
     {
     id:8,
     name:"Gabinete gamer Iqual",
-    img:"/images/img13.jpg",
+    img:"./images/img13.jpg",
     price:18520,
 
     },
@@ -65,7 +65,7 @@ let Productos=[
     {
     id:9,
     name:"Mouse lgt23",
-    img:"/images/img14.jpg",
+    img:"./images/img14.jpg",
     price:4300,
 
     },
@@ -73,7 +73,7 @@ let Productos=[
     {
     id:10,
     name:"Mouse Logitech 430",
-    img:"/images/img15.jpg",
+    img:"./images/img15.jpg",
     price:11300,
 
     },
@@ -81,7 +81,7 @@ let Productos=[
     {
     id:11,
     name:"Mouse zaino",
-    img:"/images/img16.jpg",
+    img:"./images/img16.jpg",
     price:7200,
 
     },
@@ -89,7 +89,7 @@ let Productos=[
     {
     id:12,
     name:"Monitor LCD 32",
-    img:"/images/img17.jpg",
+    img:"./images/img17.jpg",
     price:6500,
 
     },
@@ -97,7 +97,7 @@ let Productos=[
     {
     id:13,
     name:"Monitor 144hz",
-    img:"/images/img18.jpg",
+    img:"./images/img18.jpg",
     price:23500,
 
     },
@@ -105,7 +105,7 @@ let Productos=[
     {
     id:14,
     name:"Auriculares osirus",
-    img:"/images/img26.jpg",
+    img:"./images/img26.jpg",
     price:12500,
  
     },
@@ -113,7 +113,7 @@ let Productos=[
     {
     id:150,
     name:"Teclado Mecanico pink",
-    img:"/images/img1.jpg",
+    img:"./images/img1.jpg",
     price:21800,
 
     },
@@ -121,7 +121,7 @@ let Productos=[
     {
     id:16,
     name:"Auriculares Redragon",
-    img:"/images/img20.jpg",
+    img:"./images/img20.jpg",
     price:7500,
  
     },
@@ -129,7 +129,7 @@ let Productos=[
     {
     id:17,
     name:"Teclado RGB 2230",
-    img:"/images/img2.jpg",
+    img:"./images/img2.jpg",
     price:10390,
  
     },
@@ -137,7 +137,7 @@ let Productos=[
     {
     id:18,
     name:"Teclado Retroiluminado",
-    img:"/images/img3.jpg",
+    img:"./images/img3.jpg",
     price:12370,
   
     },
@@ -145,7 +145,7 @@ let Productos=[
     {
     id:19,
     name:"Teclado Black RGB",
-    img:"/images/img5.jpg",
+    img:"./images/img5.jpg",
     price:18500,
   
     },
@@ -153,7 +153,7 @@ let Productos=[
     {
     id:20,
     name:"Teclado Black/White",
-    img:"/images/img4.jpg",
+    img:"./images/img4.jpg",
     price:8300,
     
     }

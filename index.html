@@ -15,7 +15,11 @@
       crossorigin="anonymous"
     />
 
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
     <title>Tienda de computadoras</title>
   </head>
   <body>
@@ -89,10 +93,11 @@
             </li>
             <li class="nav__divcont__ul__li">
               <button
-                onclick="showCart()"
-                href="#"
-                class="button__cart"
-                class="nav__divcont__li--shop"
+                class="btn btn-primary"
+                type="button"
+                data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasRight"
+                aria-controls="offcanvasRight"
               >
                 <svg
                   class="nav__svg"
@@ -108,6 +113,43 @@
                 </svg>
               </button>
               <div class="numCart"><p class="numCart_cant">0</p></div>
+              <div
+                class="offcanvas offcanvas-end"
+                tabindex="-1"
+                id="offcanvasRight"
+                aria-labelledby="offcanvasRightLabel"
+              >
+                <div class="offcanvas-header">
+                  <h5 class="offcanvas-title" id="offcanvasRightLabel">
+                    Carrito de compras
+                  </h5>
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="offcanvas"
+                    aria-label="Close"
+                  >
+                    X
+                  </button>
+                </div>
+                <div class="offcanvas-body">
+                  <div id="">
+                    <div class="titulos__carrito">
+                      <p class="title__img">Nombre producto</p>
+                      <p class="precio">Precio</p>
+                      <p class="cantidad">Cantidad</p>
+                      <p class="eliminar">Remover</p>
+                    </div>
+                    <article
+                      class="conteiner conteiner__cart"
+                      id="cartAdd"
+                    ></article>
+                    <div class="total__carrito">
+                      <p class="texto__precio"></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </li>
           </ul>
         </div>
@@ -136,19 +178,6 @@
       </div>
 
       <article class="conteiner contenedor-article row"></article>
-
-      <div id="conteinertodo" style="display: none">
-        <button class="eliminar__cart" onclick="showCart1()">X</button>
-        <article class="conteiner conteiner__cart" id="cartAdd">
-          <div class="conteiner__cart--caract">
-            <h3 class="conteiner__cart--caract--title">Nombre productos</h3>
-            <h3 class="conteiner__cart--titleprice">Precio</h3>
-            <h3 class="conteiner__cart--cantidad">Cantidad</h3>
-            <h3 class="conteiner__cartt--titleprice">Eliminar</h3>
-          </div>
-        </article>
-        <div class="total__carrito"><p class="texto__precio"></p></div>
-      </div>
     </main>
     <footer class="footer"></footer>
 
@@ -162,6 +191,9 @@
     </script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="main.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/toastify-js"
+    ></script>
   </body>
 </html>

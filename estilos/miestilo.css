@@ -203,12 +203,12 @@ body {
 /*INICIO DEL CARRITO */
 
 .conteiner__cart {
-  width: 90%;
+  width: 100%;
   margin: auto;
 }
 
 .eliminar__cart {
-  width: 30px;
+  width: 10px;
   background-color: #175e17;
   border: none;
   color: #fff;
@@ -220,65 +220,71 @@ body {
 .conteiner__cart--caract {
   background-color: #175e17;
   color: #fff;
-  margin-top: 20px;
   justify-items: center;
   padding: 5px;
-  width: 90%;
+  width: 100%;
   margin: auto;
   display: grid;
   grid-template-columns: 2fr 1fr 1fr 1fr;
-  column-gap: 10px;
+  column-gap: 1px;
   align-items: center;
 }
 
 .conteiner__cart--item {
+  height: 300px;
   background-color: #fff;
-  border: 1px solid #175e17;
   border-top: none;
   justify-items: center;
   margin: auto;
-  padding: 5px;
-  width: 90%;
+  width: 100%;
   margin: auto;
   display: grid;
   grid-template-columns: 2fr 1fr 1fr 1fr;
-  column-gap: 10px;
+  column-gap: 1px;
   align-items: center;
+  border-bottom: 1px solid #5a5a5a;
 }
 .img__cart--item {
-  width: 200px;
-  height: 250px;
+  height: 200px;
+  width: 70%;
   object-fit: contain;
+  border-radius: 5px;
 }
 .conteiner--title--img {
   display: flex;
   align-items: center;
 }
 .title__cart--item {
+  text-align: center;
+  width: 20%;
   margin: auto;
-  margin-left: 0;
+  margin-left: 15px;
   font-size: 20px;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
+
 }
 .precio__cart--item {
-  font-size: 20px;
+  margin-left: 25px;
+  font-size: 18px;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
 }
 
 .cantidad__cart--item {
-  width: 40px;
-  margin-left: 40px;
+  width: 30px;
+ 
 }
 
 .eliminar__cart--item {
-  width: 100px;
+  width: 50px;
   background-color: #c31b1b;
   border: none;
   color: #fff;
   padding: 5px;
-  font-size: 17px;
+  font-size: 10px;
 }
 
 .total__carrito {
-  width: 81%;
+  width: 100%;
   margin: auto;
   text-align: center;
   padding: 20px;
@@ -290,7 +296,6 @@ body {
 .precioHTML{
     display: block;
 }
-
 .numCart_cant {
   position: absolute;
   text-align: center;
@@ -300,7 +305,7 @@ body {
   width: 20px;
   height: 20px;
   border-radius: 10px;
-  margin-left: -8px;
+  margin-left: -20px;
 }
 .button__comprarAddCart{
     
@@ -333,21 +338,56 @@ body {
 
 
 
-
-
 .btn-primary {
-    --bs-btn-color: #fff;
-   --bs-btn-bg: none !important; 
-    --bs-btn-border-color: none !important; 
-    --bs-btn-hover-color: #fff;
-    --bs-btn-hover-bg: none !important; 
-     --bs-btn-hover-border-color: none !important; 
-    --bs-btn-focus-shadow-rgb: 49,132,253;
-    --bs-btn-active-color: #fff;
-     --bs-btn-active-bg: none !important; 
-     --bs-btn-active-border-color: none !important; 
-    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-    --bs-btn-disabled-color: #fff;
-     --bs-btn-disabled-bg: none !important; 
-     --bs-btn-disabled-border-color: none !important; 
+  --bs-btn-color: #fff;
+  --bs-btn-bg: none !important;
+  --bs-btn-border-color: none !important;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg:none !important;
+  --bs-btn-hover-border-color: none !important;
+  --bs-btn-focus-shadow-rgb: 49,132,253;
+  --bs-btn-active-color:none !important;
+  --bs-btn-active-bg: none !important;
+  --bs-btn-active-border-color: none;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #fff;
+  --bs-btn-disabled-bg: none !important;
+  --bs-btn-disabled-border-color: none !important;
+}
+.offcanvas-header{
+  background-color: #175e17;
+  padding: 25px !important;
+
+}
+.btn-close{
+  color: #fff !important;
+  --bs-btn-close-bg:none !important;
+  font-size: 20px;
+  margin: auto 0;
+}
+.offcanvas-title{
+  text-align: center !important;
+  font-size: 20px;
+  margin: auto;
+  color: #fff;
+}
+
+
+.offcanvas{
+  --bs-offcanvas-width: 700px !important;
+}
+.titulos__carrito{
+  height: 100px;
+  background-color: #ffffff;
+  border-top: none;
+  justify-items: center;
+  margin: auto;
+  width: 100%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  column-gap: 1px;
+  align-items: center;
+  border-bottom: 1px solid #178017;
+  font-size: 20px;
 }

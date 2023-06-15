@@ -28,7 +28,7 @@ const cargarProductos = (data) => {
       "col-lg-3",
       "contendor--card"
     );
-    console.log(i);
+  
     divDelProducto.innerHTML = `
   <div class="card" style="width: 100%;">
   <img src="${product.img}" class="img-tamaño" alt="...">
@@ -106,7 +106,7 @@ function localStorageItem() {
     <p class="precio__cart--item"><b>$${element.price}</b></p>
   
     <input type="number" class="cantidad__cart--item" value="${element.cant}">
-    <button class="eliminar__cart--item" onClick="eliminarItemCart(${element.id},${element.cant})">X</button>
+    <button class="eliminar__cart--item" onClick="eliminarItemCart(${element.id},${element.cant})"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(247, 4, 4, 1);transform: ;msFilter:;"><path d="M5 20a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8h2V6h-4V4a2 2 0 0 0-2-2H9a2 2 0 0 0-2 2v2H3v2h2zM9 4h6v2H9zM8 8h9v12H7V8z"></path><path d="M9 10h2v8H9zm4 0h2v8h-2z"></path></svg></button>
     `;
     selecionCart.appendChild(div);
   });
@@ -115,32 +115,6 @@ function localStorageItem() {
   sumaCarrito();
 }
 
-function localStorageItem() {
-  const selecionCart = document.querySelector(".conteiner__cart");
-  let produtLS;
-  produtLS = localStorage.getItem("carrito");
-  let CartLS = JSON.parse(produtLS);
-  carrito = CartLS;
-
-  carrito.forEach((element) => {
-    const div = document.createElement("div");
-    div.classList.add("conteiner__cart--item");
-    div.innerHTML = `
-    <div class="conteiner--title--img">
-    <img src="${element.img}" alt="" class="img__cart--item">
-        <p class="title__cart--item"><b>${element.name}</b></p>
-    </div>
-    <p class="precio__cart--item"><b>$${element.price}</b></p>
-  
-    <input type="number" class="cantidad__cart--item" value="${element.cant}">
-    <button class="eliminar__cart--item" onClick="eliminarItemCart(${element.id},${element.cant})">X</button>
-    `;
-    selecionCart.appendChild(div);
-  });
-
-  cambiarNum();
-  sumaCarrito();
-}
 function cambiarNum() {
   const addtocartNumber = document.querySelector(".numCart_cant");
   const tItem = carrito.length;
@@ -172,7 +146,7 @@ function carritoDibujar(data) {
     <p class="precio__cart--item"><b>$${element.price}</b></p>
   
     <input type="number" class="cantidad__cart--item" value="${element.cant}">
-    <button class="eliminar__cart--item" onClick="eliminarItemCart(${element.id},${i},${element.cant})">X</button>
+    <button class="eliminar__cart--item" onClick="eliminarItemCart(${element.id},${i},${element.cant})"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(247, 4, 4, 1);transform: ;msFilter:;"><path d="M5 20a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8h2V6h-4V4a2 2 0 0 0-2-2H9a2 2 0 0 0-2 2v2H3v2h2zM9 4h6v2H9zM8 8h9v12H7V8z"></path><path d="M9 10h2v8H9zm4 0h2v8h-2z"></path></svg></button>
 
 
     `;
@@ -231,7 +205,7 @@ function eliminarItemCart(idItem) {
             const valueCant = divCambiarCant.querySelector(
               ".cantidad__cart--item"
             );
-            console.log(valueCant.cant);
+          
             element.cant--;
             valueCant.value = element.cant;
             sumaCarrito();

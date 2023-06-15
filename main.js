@@ -1,139 +1,15 @@
-//INGRESAR ELEMETONS MEDIANTE EL JSON AL HTML
-let Productos = [
-  { id: 1, name: "RTX 3090", img: "./images/img6.jpg", price: 325000 },
-  {
-    id: 2,
-    name: "GTX 2070",
-    img: "./images/img7.jpg",
-    price: 223000,
-  },
 
-  {
-    id: 3,
-    name: "GTX 1060",
-    img: "./images/img8.jpg",
-    price: 65000,
-  },
+//realizo la llamada fetch, cuyo URL va a ser la ruta de mi archivo json (ruta relativa)
+fetch("./data.json")
+  .then((res) => res.json())
+  ///La respuesta de la API se convierte en formato JSON utilizando el método json() y se almacena en la variable data.
+  .then((data) => {
+    //la variable data contiene la respuesta de la peticion, y lo que hago es ejecutar la funcion
+    //cargarProductos y le envio como parametro dicha respuesta
+    cargarProductos(data);
+  });
 
-  {
-    id: 4,
-    name: "GTX 2090",
-    img: "./images/img9.jpg",
-    price: 128000,
-  },
 
-  {
-    id: 5,
-    name: "RX 750 TI",
-    img: "./images/img10.jpg",
-    price: 37000,
-  },
-
-  {
-    id: 6,
-    name: "Gabinete Gamer 330i",
-    img: "./images/img11.jpg",
-    price: 44000,
-  },
-
-  {
-    id: 7,
-    name: "Gabinete gamer 44001",
-    img: "./images/img12.jpg",
-    price: 16500,
-  },
-
-  {
-    id: 8,
-    name: "Gabinete gamer Iqual",
-    img: "./images/img13.jpg",
-    price: 18520,
-  },
-
-  {
-    id: 9,
-    name: "Mouse lgt23",
-    img: "./images/img14.jpg",
-    price: 4300,
-  },
-
-  {
-    id: 10,
-    name: "Mouse Logitech 430",
-    img: "./images/img15.jpg",
-    price: 11300,
-  },
-
-  {
-    id: 11,
-    name: "Mouse zaino",
-    img: "./images/img16.jpg",
-    price: 7200,
-  },
-
-  {
-    id: 12,
-    name: "Monitor LCD 32",
-    img: "./images/img17.jpg",
-    price: 6500,
-  },
-
-  {
-    id: 13,
-    name: "Monitor 144hz",
-    img: "./images/img18.jpg",
-    price: 23500,
-  },
-
-  {
-    id: 14,
-    name: "Auriculares osirus",
-    img: "./images/img26.jpg",
-    price: 12500,
-  },
-
-  {
-    id:15,
-    name: "Teclado Mecanico pink",
-    img: "./images/img1.jpg",
-    price: 21800,
-  },
-
-  {
-    id: 16,
-    name: "Auriculares Redragon",
-    img: "./images/img20.jpg",
-    price: 7500,
-  },
-
-  {
-    id: 17,
-    name: "Teclado RGB 2230",
-    img: "./images/img2.jpg",
-    price: 10390,
-  },
-
-  {
-    id: 18,
-    name: "Teclado Retroiluminado",
-    img: "./images/img3.jpg",
-    price: 12370,
-  },
-
-  {
-    id: 19,
-    name: "Teclado Black RGB",
-    img: "./images/img5.jpg",
-    price: 18500,
-  },
-
-  {
-    id: 0,
-    name: "Teclado Black/White",
-    img: "./images/img4.jpg",
-    price: 8300,
-  },
-];
 const TotalHTML = document.querySelector(".texto__precio");
 let carrito = [];
 
@@ -144,9 +20,11 @@ if(carrito===null){
 }
 
 
-//INICIO DE INGRESAR TODO A LA PAGINA
-const seleccionCarrito = document.querySelector(".contenedor-article");
-Productos.forEach((product, i) => {
+let Productos=[]
+const cargarProductos = (data) => {
+  //dentro de la funcion, asigno al array de productos arriba declarado, la data que me trajo la peticion
+  Productos = data;
+  const seleccionCarrito = document.querySelector(".contenedor-article");
   const divDelProducto = document.createElement("div");
   divDelProducto.classList.add(
     "conteiner",
@@ -155,7 +33,8 @@ Productos.forEach((product, i) => {
     "col-lg-3",
     "contendor--card"
   );
-
+  //luego recorro el array como ya sabemos hacerlo
+Productos.forEach((product, i) => {
   divDelProducto.innerHTML = `
   <div class="card" style="width: 100%;">
   <img src="${product.img}" class="img-tamaño" alt="...">
@@ -169,6 +48,13 @@ Productos.forEach((product, i) => {
 
 
 });
+};
+
+
+
+//INICIO DE INGRESAR TODO A LA PAGINA
+
+
 
 
 

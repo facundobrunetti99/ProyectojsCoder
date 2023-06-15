@@ -143,6 +143,7 @@ if(carrito===null){
   localStorageItem();
 }
 
+
 //INICIO DE INGRESAR TODO A LA PAGINA
 const seleccionCarrito = document.querySelector(".contenedor-article");
 Productos.forEach((product, i) => {
@@ -187,7 +188,7 @@ function addTocart(i) {
     stopOnFocus: true, // Prevents dismissing of toast on hover
     style: {
       background:
-        "linear-gradient(90deg, rgba(101,181,94,1) 0%, rgba(48,200,61,1) 35%, rgba(12,47,8,1) 100%)",
+        "linear-gradient(90deg, rgba(185,224,138,1) 0%, rgba(116,200,48,0.9962359943977591) 35%, rgba(107,215,137,0.8925945378151261) 100%)",
     },
     onClick: function () {}, // Callback after click
   }).showToast();
@@ -198,7 +199,12 @@ function addTocart(i) {
   index = carrito.findIndex((element) => {
     return element.id === Productos[i].id;
   });
+ 
+ 
 
+  
+
+ 
   if (index === -1) {
     const productoAgregar = Productos[posicion];
     productoAgregar.cant = 1;
@@ -250,8 +256,39 @@ function localStorageItem(){
 
   cambiarNum();
   sumaCarrito();
+
 }
 
+function localStorageItem(){
+
+
+ 
+  const selecionCart = document.querySelector(".conteiner__cart");
+  let produtLS;
+  produtLS=localStorage.getItem("carrito");
+  let CartLS=JSON.parse(produtLS);
+  carrito=CartLS;
+
+  carrito.forEach((element)=>{
+    const div = document.createElement("div");
+    div.classList.add("conteiner__cart--item");
+    div.innerHTML = `
+    <div class="conteiner--title--img">
+    <img src="${element.img}" alt="" class="img__cart--item">
+        <p class="title__cart--item"><b>${element.name}</b></p>
+    </div>
+    <p class="precio__cart--item"><b>$${element.price}</b></p>
+  
+    <input type="number" class="cantidad__cart--item" value="${element.cant}">
+    <button class="eliminar__cart--item" onClick="eliminarItemCart(${element.id},${element.cant})">X</button>
+    `;
+      selecionCart.appendChild(div);
+      
+  })
+
+  cambiarNum();
+  sumaCarrito();
+}
 function cambiarNum() {
   const addtocartNumber = document.querySelector(".numCart_cant");
   const tItem = carrito.length;
@@ -309,7 +346,9 @@ function sumaCarrito() {
   const button1 = document.querySelector(".button__comprarAddCart");
   
   button1.addEventListener("click", () => {
+
     limpiarCarrito();
+
     Swal.fire({
       position: "center",
       icon: "success",
@@ -319,7 +358,6 @@ function sumaCarrito() {
     });
   });
 
-  
 }
 
 //FUNCION ELIMINAR ITEMS DE UN CARRITO

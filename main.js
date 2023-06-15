@@ -13,16 +13,10 @@ if (carrito === null) {
   localStorageItem();
 }
 
-
-//INICIO DE INGRESAR TODO A LA PAGINA
-const seleccionCarrito = document.querySelector(".contenedor-article");
-
-
 extraerProductos();
 let Productos = [];
 const cargarProductos = (data) => {
   Productos = data;
-
 
   Productos.forEach((product, i) => {
     const seleccionCarrito = document.querySelector(".contenedor-article");
@@ -46,7 +40,7 @@ const cargarProductos = (data) => {
 </div>`;
     seleccionCarrito.appendChild(divDelProducto);
   });
-}
+};
 
 //INICIO DE INGRESAR TODO A LA PAGINA
 
@@ -73,12 +67,7 @@ function addTocart(i) {
   index = carrito.findIndex((element) => {
     return element.id === Productos[i].id;
   });
- 
- 
 
-  
-
- 
   if (index === -1) {
     const productoAgregar = Productos[posicion];
     productoAgregar.cant = 1;
@@ -124,18 +113,8 @@ function localStorageItem() {
 
   cambiarNum();
   sumaCarrito();
-
 }
 
-function localStorageItem(){
-
-  
-  let produtLS;
-  produtLS=localStorage.getItem("carrito");
-  let CartLS=JSON.parse(produtLS);
-  carrito=CartLS;
-
-carrito.forEach((element)=>{
 function localStorageItem() {
   const selecionCart = document.querySelector(".conteiner__cart");
   let produtLS;
@@ -156,18 +135,12 @@ function localStorageItem() {
     <input type="number" class="cantidad__cart--item" value="${element.cant}">
     <button class="eliminar__cart--item" onClick="eliminarItemCart(${element.id},${element.cant})">X</button>
     `;
-      selecionCart.appendChild(div);
-      
-  })
-
     selecionCart.appendChild(div);
-  }
-
+  });
 
   cambiarNum();
   sumaCarrito();
 }
-
 function cambiarNum() {
   const addtocartNumber = document.querySelector(".numCart_cant");
   const tItem = carrito.length;
@@ -222,7 +195,6 @@ function sumaCarrito() {
   const button1 = document.querySelector(".button__comprarAddCart");
 
   button1.addEventListener("click", () => {
-
     limpiarCarrito();
 
     Swal.fire({
@@ -233,8 +205,6 @@ function sumaCarrito() {
       timer: 2000,
     });
   });
-
-
 }
 
 //FUNCION ELIMINAR ITEMS DE UN CARRITO

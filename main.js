@@ -1,37 +1,35 @@
-
-const extraerProductos= async ()=>{
-  const resp= await  fetch("./data.json")
-  const data = await resp.json()
-    cargarProductos(data);
-}
-
+const extraerProductos = async () => {
+  const resp = await fetch("./data.json");
+  const data = await resp.json();
+  cargarProductos(data);
+};
 
 const TotalHTML = document.querySelector(".texto__precio");
 let carrito = [];
 
-if(carrito===null){
+if (carrito === null) {
   localStorageItem();
-}else if(localStorage.length!=0){
+} else if (localStorage.length != 0) {
   localStorageItem();
 }
 
-
 extraerProductos();
-let Productos=[]
+let Productos = [];
 const cargarProductos = (data) => {
   Productos = data;
-Productos.forEach((product, i) => {
-  const seleccionCarrito = document.querySelector(".contenedor-article");
-  const divDelProducto = document.createElement("div");
-  divDelProducto.classList.add(
-    "conteiner",
-    "col-sm-6",
-    "col-md-4",
-    "col-lg-3",
-    "contendor--card"
-  );
-  console.log(i)
-  divDelProducto.innerHTML = `
+
+  Productos.forEach((product, i) => {
+    const seleccionCarrito = document.querySelector(".contenedor-article");
+    const divDelProducto = document.createElement("div");
+    divDelProducto.classList.add(
+      "conteiner",
+      "col-sm-6",
+      "col-md-4",
+      "col-lg-3",
+      "contendor--card"
+    );
+    console.log(i);
+    divDelProducto.innerHTML = `
   <div class="card" style="width: 100%;">
   <img src="${product.img}" class="img-tamaño" alt="...">
   <div class="card-body">
@@ -40,25 +38,15 @@ Productos.forEach((product, i) => {
     <button class="button--card" onClick="addTocart(${i})">Comprar</button>
   </div>
 </div>`;
-  seleccionCarrito.appendChild(divDelProducto);
-
-
-});
+    seleccionCarrito.appendChild(divDelProducto);
+  });
 };
 
-
-
 //INICIO DE INGRESAR TODO A LA PAGINA
-
-
-
-
-
 
 //INICIO DE AGREGAR AL CARRITO PUSH CARRITO
 const carritoAgregar = document.querySelector(".conteiner conteiner__cart");
 function addTocart(i) {
-
   Toastify({
     text: "Producto agregado!",
     duration: 3000,
@@ -75,51 +63,39 @@ function addTocart(i) {
     onClick: function () {}, // Callback after click
   }).showToast();
 
- 
-
   let posicion = i;
   index = carrito.findIndex((element) => {
     return element.id === Productos[i].id;
   });
- 
- 
 
-  
-
- 
   if (index === -1) {
     const productoAgregar = Productos[posicion];
     productoAgregar.cant = 1;
     carrito.push(productoAgregar);
     carritoDibujar(productoAgregar);
     sumaCarrito();
-    const cart=JSON.stringify(carrito);
-    localStorage.setItem("carrito",cart)
-    
-  
+    const cart = JSON.stringify(carrito);
+    localStorage.setItem("carrito", cart);
   } else {
-    let cantI=carrito[index].cant += 1;
+    let cantI = (carrito[index].cant += 1);
     carritoDibujar(carrito[index]);
     sumaCarrito();
-    const actualizarCart=JSON.parse(localStorage.getItem("carrito"));
-    actualizarCart[index].cant=cantI
-    const item=JSON.stringify(actualizarCart)
+    const actualizarCart = JSON.parse(localStorage.getItem("carrito"));
+    actualizarCart[index].cant = cantI;
+    const item = JSON.stringify(actualizarCart);
     localStorage.setItem("carrito", item);
-
-   
   }
 
   cambiarNum();
-
 }
 
-function localStorageItem(){
+function localStorageItem() {
   const selecionCart = document.querySelector(".conteiner__cart");
   let produtLS;
-  produtLS=localStorage.getItem("carrito");
-  let CartLS=JSON.parse(produtLS);
-  carrito=CartLS;
-  carrito.forEach((element)=>{
+  produtLS = localStorage.getItem("carrito");
+  let CartLS = JSON.parse(produtLS);
+  carrito = CartLS;
+  carrito.forEach((element) => {
     const div = document.createElement("div");
     div.classList.add("conteiner__cart--item");
     div.innerHTML = `
@@ -132,26 +108,21 @@ function localStorageItem(){
     <input type="number" class="cantidad__cart--item" value="${element.cant}">
     <button class="eliminar__cart--item" onClick="eliminarItemCart(${element.id},${element.cant})">X</button>
     `;
-      selecionCart.appendChild(div);
-      
-  })
+    selecionCart.appendChild(div);
+  });
 
   cambiarNum();
   sumaCarrito();
-
 }
 
-function localStorageItem(){
-
-
- 
+function localStorageItem() {
   const selecionCart = document.querySelector(".conteiner__cart");
   let produtLS;
-  produtLS=localStorage.getItem("carrito");
-  let CartLS=JSON.parse(produtLS);
-  carrito=CartLS;
+  produtLS = localStorage.getItem("carrito");
+  let CartLS = JSON.parse(produtLS);
+  carrito = CartLS;
 
-  carrito.forEach((element)=>{
+  carrito.forEach((element) => {
     const div = document.createElement("div");
     div.classList.add("conteiner__cart--item");
     div.innerHTML = `
@@ -164,9 +135,8 @@ function localStorageItem(){
     <input type="number" class="cantidad__cart--item" value="${element.cant}">
     <button class="eliminar__cart--item" onClick="eliminarItemCart(${element.id},${element.cant})">X</button>
     `;
-      selecionCart.appendChild(div);
-      
-  })
+    selecionCart.appendChild(div);
+  });
 
   cambiarNum();
   sumaCarrito();
@@ -177,13 +147,10 @@ function cambiarNum() {
   addtocartNumber.innerHTML = `<p>${tItem}</p> `;
 }
 
-
-
 //AGREGAR HTML AL CARRITO
 const selecionCart = document.querySelector(".conteiner__cart");
 
-function carritoDibujar(data){
-
+function carritoDibujar(data) {
   const div = document.createElement("div");
   div.classList.add("conteiner__cart--item");
   const title = selecionCart.querySelectorAll(".title__cart--item");
@@ -226,9 +193,8 @@ function sumaCarrito() {
                             <button class="button__comprarAddCart">Comprar</button>`;
 
   const button1 = document.querySelector(".button__comprarAddCart");
-  
-  button1.addEventListener("click", () => {
 
+  button1.addEventListener("click", () => {
     limpiarCarrito();
 
     Swal.fire({
@@ -239,7 +205,6 @@ function sumaCarrito() {
       timer: 2000,
     });
   });
-
 }
 
 //FUNCION ELIMINAR ITEMS DE UN CARRITO
@@ -302,8 +267,6 @@ function cambiarValue() {
   }
 }
 
-
-
 function buscarItem() {
   const contenido = document.querySelector(".nav__button--input");
   const textoAbuscar = contenido.value.toLocaleLowerCase();
@@ -324,33 +287,27 @@ function buscarItem() {
   });
 }
 
+function limpiarCarrito() {
+  const cantidad = carrito.length;
 
-function limpiarCarrito(){
-  const cantidad=carrito.length;
+  carrito.splice(0, cantidad);
+  sumaCarrito();
+  cambiarValue();
+  cambiarNum();
+  const selecionCart = document.querySelector(".conteiner__cart");
+  const seleccionDiv = selecionCart.querySelectorAll(".conteiner__cart--item");
 
-    carrito.splice(0,cantidad)
-    sumaCarrito() 
-    cambiarValue() 
-    cambiarNum()
-    const selecionCart = document.querySelector(".conteiner__cart");
-    const seleccionDiv=selecionCart.querySelectorAll('.conteiner__cart--item');
+  seleccionDiv.forEach((element) => {
+    element.remove();
+  });
 
-    seleccionDiv.forEach((element)=>{
-      element.remove();
-    })
+  localStorage.removeItem("carrito");
+}
 
-    localStorage.removeItem("carrito")
-  }
-
-  function  eliminarItemLS(){
-   
-      const cartLS=localStorage.getItem("carrito")
-      let cartOBJ=JSON.parse(cartLS);
-      cartOBJ=carrito;
-      
-     const cartLsNew=JSON.stringify(cartOBJ);
-     
-     localStorage.setItem("carrito",cartLsNew)
-
-     
-  }
+function eliminarItemLS() {
+  const cartLS = localStorage.getItem("carrito");
+  let cartOBJ = JSON.parse(cartLS);
+  cartOBJ = carrito;
+  const cartLsNew = JSON.stringify(cartOBJ);
+  localStorage.setItem("carrito", cartLsNew);
+}

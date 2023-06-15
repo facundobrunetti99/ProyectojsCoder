@@ -1,13 +1,9 @@
 
-//realizo la llamada fetch, cuyo URL va a ser la ruta de mi archivo json (ruta relativa)
-fetch("./data.json")
-  .then((res) => res.json())
-  ///La respuesta de la API se convierte en formato JSON utilizando el método json() y se almacena en la variable data.
-  .then((data) => {
-    //la variable data contiene la respuesta de la peticion, y lo que hago es ejecutar la funcion
-    //cargarProductos y le envio como parametro dicha respuesta
+const extraerProductos= async ()=>{
+  const resp= await  fetch("./data.json")
+  const data = await resp.json()
     cargarProductos(data);
-  });
+}
 
 
 const TotalHTML = document.querySelector(".texto__precio");
@@ -20,10 +16,11 @@ if(carrito===null){
 }
 
 
+extraerProductos();
 let Productos=[]
 const cargarProductos = (data) => {
-  //dentro de la funcion, asigno al array de productos arriba declarado, la data que me trajo la peticion
   Productos = data;
+Productos.forEach((product, i) => {
   const seleccionCarrito = document.querySelector(".contenedor-article");
   const divDelProducto = document.createElement("div");
   divDelProducto.classList.add(
@@ -33,8 +30,7 @@ const cargarProductos = (data) => {
     "col-lg-3",
     "contendor--card"
   );
-  //luego recorro el array como ya sabemos hacerlo
-Productos.forEach((product, i) => {
+  console.log(i)
   divDelProducto.innerHTML = `
   <div class="card" style="width: 100%;">
   <img src="${product.img}" class="img-tamaño" alt="...">

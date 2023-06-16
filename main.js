@@ -14,19 +14,21 @@ if (carrito === null) {
 }
 
 extraerProductos();
+
 let Productos = [];
 const cargarProductos = (data) => {
   Productos = data;
-
   Productos.forEach((product, i) => {
     const seleccionCarrito = document.querySelector(".contenedor-article");
     const divDelProducto = document.createElement("div");
     divDelProducto.classList.add(
       "conteiner",
+      "col-sm-12",
       "col-sm-6",
       "col-md-4",
       "col-lg-3",
       "contendor--card"
+      
     );
   
     divDelProducto.innerHTML = `
@@ -121,9 +123,8 @@ function cambiarNum() {
   addtocartNumber.innerHTML = `<p>${tItem}</p> `;
 }
 
-//AGREGAR HTML AL CARRITO
+//AGREGAR CARRITO AL HTML
 const selecionCart = document.querySelector(".conteiner__cart");
-
 function carritoDibujar(data) {
   const div = document.createElement("div");
   div.classList.add("conteiner__cart--item");
@@ -164,13 +165,12 @@ function sumaCarrito() {
     total = element.price * element.cant + total;
   });
   TotalHTML.innerHTML = `<b class="precioHTML">TOTAL $${total}</b>
-                            <button class="button__comprarAddCart">Comprar</button>`;
+                          <button class="button__comprarAddCart">Comprar</button>`;
 
   const button1 = document.querySelector(".button__comprarAddCart");
 
   button1.addEventListener("click", () => {
     limpiarCarrito();
-
     Swal.fire({
       position: "center",
       icon: "success",
@@ -263,7 +263,6 @@ function buscarItem() {
 
 function limpiarCarrito() {
   const cantidad = carrito.length;
-
   carrito.splice(0, cantidad);
   sumaCarrito();
   cambiarValue();
@@ -284,4 +283,27 @@ function eliminarItemLS() {
   cartOBJ = carrito;
   const cartLsNew = JSON.stringify(cartOBJ);
   localStorage.setItem("carrito", cartLsNew);
+}
+
+const button1=document.querySelector('.abrirMenu')
+
+  button1.addEventListener('click',FuncioButton)
+
+function FuncioButton(event){
+  const contenedorNav=document.querySelector('.nav1')
+  const  seleccionCruz=document.querySelector('.CerrarMenu')
+  seleccionCruz.style.display="block"
+  contenedorNav.style.display = "flex";
+  button1.style.display="none";
+  seleccionCruz.addEventListener('click',CerrarMenuAccion)
+}
+
+function CerrarMenuAccion(event){
+  const cruz=event.target;
+  const contenedorNav=document.querySelector('.nav1')
+  contenedorNav.style.display = "none";
+  button1.style.display="block";
+  const  seleccionCruz=document.querySelector('.CerrarMenu')
+  seleccionCruz.style.display="none"
+ 
 }

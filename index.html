@@ -23,157 +23,164 @@
     <title>Tienda de computadoras</title>
   </head>
   <body>
-    <header class="header">
-      <nav class="nav1">
-        <div class="nav__logo">
-          <img src="./images/img19.jpg" alt="" class="nav__log--img" />
-        </div>
-
-        <div class="nav__divcont">
-          <ul class="nav__divcont__ul">
-            <li class="nav__divcont__ul__li">
-              <a href="#" class="nav__ul__li--home"
-                ><svg
-                  class="nav__svg"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  style="
-                    fill: rgba(51, 255, 128, 1);
-                    transform: scaleX(-1);
-                    msfilter: progid:DXImageTransform.Microsoft.BasicImage(rotation=0, mirror=1);
-                  "
-                >
-                  <path
-                    d="M5 22h14a2 2 0 0 0 2-2v-9a1 1 0 0 0-.29-.71l-8-8a1 1 0 0 0-1.41 0l-8 8A1 1 0 0 0 3 11v9a2 2 0 0 0 2 2zm5-2v-5h4v5zm-5-8.59 7-7 7 7V20h-3v-5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v5H5z"
-                  ></path></svg
-              ></a>
-              <a href="#" class="nav__ul__li--a">Inicio</a>
-            </li>
-            <li class="nav__divcont__ul__li">
-              <a href="#" class="nav__ul__li--home"
-                ><svg
-                  class="nav__svg"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  style="
-                    fill: rgba(51, 255, 128, 1);
-                    transform: scaleY(-1);
-                    msfilter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1);
-                  "
-                >
-                  <path
-                    d="M14 3H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2z"
-                  ></path>
-                  <path
-                    d="M21 19v-9a2 2 0 0 0-2-2h-1v8a2 2 0 0 1-2 2H8v1a2 2 0 0 0 2 2h9a2 2 0 0 0 2-2z"
-                  ></path></svg
-              ></a>
-              <a href="#" class="nav__ul__li--a">Productos</a>
-            </li>
-            <li class="nav__divcont__ul__li">
-              <a href="#" class="nav__ul__li--home"
-                ><svg
-                  class="nav__svg"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  style="fill: rgba(51, 255, 128, 1); transform: msFilter"
-                >
-                  <path
-                    d="M20 2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2zm-6 2.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM19 15H9v-.25C9 12.901 11.254 11 14 11s5 1.901 5 3.75V15z"
-                  ></path>
-                  <path d="M4 8H2v12c0 1.103.897 2 2 2h12v-2H4V8z"></path></svg
-              ></a>
-              <a href="#" class="nav__ul__li--a">Nososotros</a>
-            </li>
-            <li class="nav__divcont__ul__li">
-              <button
-                class="btn btn-primary"
-                type="button"
-                data-bs-toggle="offcanvas"
-                data-bs-target="#offcanvasRight"
-                aria-controls="offcanvasRight"
-              >
-                <svg
-                  class="nav__svg"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  style="fill: rgba(51, 255, 128, 1); transform: msFilter"
-                >
-                  <path
-                    d="M5 22h14c1.103 0 2-.897 2-2V9a1 1 0 0 0-1-1h-3V7c0-2.757-2.243-5-5-5S7 4.243 7 7v1H4a1 1 0 0 0-1 1v11c0 1.103.897 2 2 2zM9 7c0-1.654 1.346-3 3-3s3 1.346 3 3v1H9V7zm-4 3h2v2h2v-2h6v2h2v-2h2l.002 10H5V10z"
-                  ></path>
-                </svg>
-              </button>
-              <div class="numCart"><p class="numCart_cant">0</p></div>
-              <div
-                class="offcanvas offcanvas-end"
-                tabindex="-1"
-                id="offcanvasRight"
-                aria-labelledby="offcanvasRightLabel"
-              >
-                <div class="offcanvas-header">
-                  <h5 class="offcanvas-title" id="offcanvasRightLabel">
-                    Carrito de compras
-                  </h5>
-                  <button
-                    type="button"
-                    class="btn-close"
-                    data-bs-dismiss="offcanvas"
-                    aria-label="Close"
-                  >
-                    X
-                  </button>
-                </div>
-                <div class="offcanvas-body">
-                  <div id="">
-                    <div class="titulos__carrito">
-                      <p class="title__img">Nombre producto</p>
-                      <p class="precio">Precio</p>
-                      <p class="cantidad">Cantidad</p>
-                      <p class="eliminar">Remover</p>
-                    </div>
-                    <article
-                      class="conteiner conteiner__cart"
-                      id="cartAdd"
-                    ></article>
-                    <div class="total__carrito">
-                      <p class="texto__precio"></p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </li>
-          </ul>
-        </div>
-
-        <div class="nav__button">
-          <input
-            class="form-control nav__button--input"
-            type="text"
-            placeholder="Nombre Producto"
-          />
-
-          <button class="nav__button__buscar" onclick="buscarItem()">
-            Buscar
-          </button>
-        </div>
-      </nav>
-    </header>
+    <header class="header1">
+           
+      <div class="nav__logo">
+       <img src="./images/img19.jpg" alt="" class="nav__log--img" />
+     </div>
+    
+       <nav class="nav1" data-aos="fade-up">
+        
+       
+         <div class="nav__divcont" data-aos="fade-up">
+           <ul class="nav__divcont__ul" data-aos="fade-up">
+             <li class="nav__divcont__ul__li" data-aos="fade-up">
+               <a href="#" class="nav__ul__li--home"
+                 ><svg
+                   class="nav__svg"
+                   xmlns="http://www.w3.org/2000/svg"
+                   width="24"
+                   height="24"
+                   viewBox="0 0 24 24"
+                   style="
+                     fill: rgba(51, 255, 128, 1);
+                     transform: scaleX(-1);
+                     msfilter: progid:DXImageTransform.Microsoft.BasicImage(rotation=0, mirror=1);
+                   "
+                 >
+                   <path
+                     d="M5 22h14a2 2 0 0 0 2-2v-9a1 1 0 0 0-.29-.71l-8-8a1 1 0 0 0-1.41 0l-8 8A1 1 0 0 0 3 11v9a2 2 0 0 0 2 2zm5-2v-5h4v5zm-5-8.59 7-7 7 7V20h-3v-5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v5H5z"
+                   ></path></svg
+               ></a>
+               <a href="#" class="nav__ul__li--a">Inicio</a>
+             </li>
+             <li class="nav__divcont__ul__li">
+               <a href="#" class="nav__ul__li--home"
+                 ><svg
+                   class="nav__svg"
+                   xmlns="http://www.w3.org/2000/svg"
+                   width="24"
+                   height="24"
+                   viewBox="0 0 24 24"
+                   style="
+                     fill: rgba(51, 255, 128, 1);
+                     transform: scaleY(-1);
+                     msfilter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1);
+                   "
+                 >
+                   <path
+                     d="M14 3H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2z"
+                   ></path>
+                   <path
+                     d="M21 19v-9a2 2 0 0 0-2-2h-1v8a2 2 0 0 1-2 2H8v1a2 2 0 0 0 2 2h9a2 2 0 0 0 2-2z"
+                   ></path></svg
+               ></a>
+               <a href="#" class="nav__ul__li--a">Productos</a>
+             </li>
+             <li class="nav__divcont__ul__li">
+               <a href="#" class="nav__ul__li--home"
+                 ><svg
+                   class="nav__svg"
+                   xmlns="http://www.w3.org/2000/svg"
+                   width="24"
+                   height="24"
+                   viewBox="0 0 24 24"
+                   style="fill: rgba(51, 255, 128, 1); transform: msFilter"
+                 >
+                   <path
+                     d="M20 2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2zm-6 2.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM19 15H9v-.25C9 12.901 11.254 11 14 11s5 1.901 5 3.75V15z"
+                   ></path>
+                   <path d="M4 8H2v12c0 1.103.897 2 2 2h12v-2H4V8z"></path></svg
+               ></a>
+               <a href="#" class="nav__ul__li--a">Nososotros</a>
+             </li>
+             <li class="nav__divcont__ul__li">
+               <button
+                 class="btn btn-primary"
+                 type="button"
+                 data-bs-toggle="offcanvas"
+                 data-bs-target="#offcanvasRight"
+                 aria-controls="offcanvasRight"
+               >
+                 <svg
+                   class="nav__svg"
+                   xmlns="http://www.w3.org/2000/svg"
+                   width="24"
+                   height="24"
+                   viewBox="0 0 24 24"
+                   style="fill: rgba(51, 255, 128, 1); transform: msFilter"
+                 >
+                   <path
+                     d="M5 22h14c1.103 0 2-.897 2-2V9a1 1 0 0 0-1-1h-3V7c0-2.757-2.243-5-5-5S7 4.243 7 7v1H4a1 1 0 0 0-1 1v11c0 1.103.897 2 2 2zM9 7c0-1.654 1.346-3 3-3s3 1.346 3 3v1H9V7zm-4 3h2v2h2v-2h6v2h2v-2h2l.002 10H5V10z"
+                   ></path>
+                 </svg>
+               </button>
+               <div class="numCart"><p class="numCart_cant">0</p></div>
+               <div
+                 class="offcanvas offcanvas-end"
+                 tabindex="-1"
+                 id="offcanvasRight"
+                 aria-labelledby="offcanvasRightLabel"
+               >
+                 <div class="offcanvas-header">
+                   <h5 class="offcanvas-title" id="offcanvasRightLabel">
+                     Carrito de compras
+                   </h5>
+                   <button
+                     type="button"
+                     class="btn-close"
+                     data-bs-dismiss="offcanvas"
+                     aria-label="Close"
+                   >
+                     X
+                   </button>
+                 </div>
+                 <div class="offcanvas-body">
+                   <div id="">
+                     <div class="titulos__carrito">
+                       <p class="title__img">Nombre producto</p>
+                       <p class="precio">Precio</p>
+                       <p class="cantidad">Cantidad</p>
+                       <p class="eliminar">Remover</p>
+                     </div>
+                     <article
+                       class="conteiner conteiner__cart"
+                       id="cartAdd"
+                     ></article>
+                     <div class="total__carrito">
+                       <p class="texto__precio"></p>
+                     </div>
+                   </div>
+                 </div>
+               </div>
+             </li>
+           </ul>
+         </div>
+       
+         <div class="nav__button">
+           <input
+             class="form-control nav__button--input"
+             type="text"
+             placeholder="Nombre Producto"
+           />
+       
+           <button class="nav__button__buscar" onclick="buscarItem()">
+             Buscar
+           </button>
+         </div>
+       </nav>
+       <div class="div1"><button href="#" class="abrirMenu"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(255, 255, 255, 1);transform: msFilter"><path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"></path></svg></button>
+        <button href="#" class="CerrarMenu">X</button></div>
+      </div>
+       
+     </header>
 
     <main class="main">
-      <div class="main__title">
+      <div class="main__title " >
         <div class="main__title__fondo">
           <img src="./images/img24.jpg" alt="" class="main__title--fondo" />
         </div>
-        <h1 class="main__tittle">Componenetes computacionales</h1>
+        <h1 class="main__tittle" aos="fade" aos-duration="500">Componenetes computacionales</h1>
         <h2 class="main__subtitle">Computacion</h2>
       </div>
 
@@ -186,14 +193,16 @@
       integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
       crossorigin="anonymous"
     ></script>
-    <script>
-      AOS.init();
-    </script>
+   
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="main.js"></script>
     <script
       type="text/javascript"
       src="https://cdn.jsdelivr.net/npm/toastify-js"
     ></script>
+
+    <script>
+      AOS.init();
+    </script>
   </body>
 </html>

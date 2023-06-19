@@ -410,10 +410,6 @@ body {
 }
 
 @media screen and (max-width: 1024px) {
-
-
-
-
   .header1 {
     display: flex;
     background-color: #5a5a5a;

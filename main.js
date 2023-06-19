@@ -1,24 +1,23 @@
+//EXTRAER PRODUCTOS JSON
 const extraerProductos = async () => {
   const resp = await fetch("./data.json");
   const data = await resp.json();
   cargarProductos(data);
 };
-
+//TOTAL DEL PRECIO HTML
 const TotalHTML = document.querySelector(".texto__precio");
 let carrito = [];
 
-if (carrito === null) {
-  localStorageItem();
-} else if (localStorage.length != 0) {
+//STORAGE
+if (carrito === null || localStorage.length != 0) {
   localStorageItem();
 }
-
 extraerProductos();
 
-let Productos = [];
+let productos = [];
 const cargarProductos = (data) => {
-  Productos = data;
-  Productos.forEach((product, i) => {
+  productos = data;
+  productos.forEach((product, i) => {
     const seleccionCarrito = document.querySelector(".contenedor-article");
     const divDelProducto = document.createElement("div");
     divDelProducto.classList.add(
@@ -43,9 +42,7 @@ const cargarProductos = (data) => {
   });
 };
 
-//INICIO DE INGRESAR TODO A LA PAGINA
-
-//INICIO DE AGREGAR AL CARRITO PUSH CARRITO
+//PUSH CARRITO 
 const carritoAgregar = document.querySelector(".conteiner conteiner__cart");
 function addTocart(i) {
   Toastify({
@@ -54,23 +51,23 @@ function addTocart(i) {
     destination: "https://github.com/apvarun/toastify-js",
     newWindow: true,
     close: true,
-    gravity: "top", // `top` or `bottom`
-    position: "right", // `left`, `center` or `right`
-    stopOnFocus: true, // Prevents dismissing of toast on hover
+    gravity: "top",
+    position: "right", 
+    stopOnFocus: true, 
     style: {
       background:
         "linear-gradient(90deg, rgba(185,224,138,1) 0%, rgba(116,200,48,0.9962359943977591) 35%, rgba(107,215,137,0.8925945378151261) 100%)",
     },
-    onClick: function () {}, // Callback after click
+    onClick: function () {}, 
   }).showToast();
 
   let posicion = i;
   index = carrito.findIndex((element) => {
-    return element.id === Productos[i].id;
+    return element.id === productos[i].id;
   });
 
   if (index === -1) {
-    const productoAgregar = Productos[posicion];
+    const productoAgregar = productos[posicion];
     productoAgregar.cant = 1;
     carrito.push(productoAgregar);
     carritoDibujar(productoAgregar);
@@ -89,7 +86,7 @@ function addTocart(i) {
 
   cambiarNum();
 }
-
+//AGREGAR AL LOCALSTORAGE
 function localStorageItem() {
   const selecionCart = document.querySelector(".conteiner__cart");
   let produtLS;
@@ -115,7 +112,7 @@ function localStorageItem() {
   cambiarNum();
   sumaCarrito();
 }
-
+//CAMBIAR NUMERO DE ITEMS DEL CARRITO
 function cambiarNum() {
   const addtocartNumber = document.querySelector(".numCart_cant");
   const tItem = carrito.length;
@@ -148,7 +145,6 @@ function carritoDibujar(data) {
     <input type="number" class="cantidad__cart--item" value="${element.cant}">
     <button class="eliminar__cart--item" onClick="eliminarItemCart(${element.id},${i},${element.cant})"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(247, 4, 4, 1);transform: ;msFilter:;"><path d="M5 20a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8h2V6h-4V4a2 2 0 0 0-2-2H9a2 2 0 0 0-2 2v2H3v2h2zM9 4h6v2H9zM8 8h9v12H7V8z"></path><path d="M9 10h2v8H9zm4 0h2v8h-2z"></path></svg></button>
 
-
     `;
       selecionCart.appendChild(div);
       cambiarValue(element.id, element.cant);
@@ -156,7 +152,7 @@ function carritoDibujar(data) {
   });
 }
 
-//SUMA TOTAL
+//SUMA TOTAL DEL CARRITO
 
 function sumaCarrito() {
   let total = 0;
@@ -239,7 +235,7 @@ function cambiarValue() {
     }
   }
 }
-
+//BUSCAR ITEMS DE LOS PRODUCTOS
 function buscarItem() {
   const contenido = document.querySelector(".nav__button--input");
   const textoAbuscar = contenido.value.toLocaleLowerCase();
@@ -260,6 +256,7 @@ function buscarItem() {
   });
 }
 
+//FUNCION COMPRAR LIMPIAR CARRO 
 function limpiarCarrito() {
   const cantidad = carrito.length;
   carrito.splice(0, cantidad);
@@ -276,6 +273,7 @@ function limpiarCarrito() {
   localStorage.removeItem("carrito");
 }
 
+//FUNCION ELIMINAR ITEM LOCALSTORAGE
 function eliminarItemLS() {
   const cartLS = localStorage.getItem("carrito");
   let cartOBJ = JSON.parse(cartLS);
@@ -284,16 +282,19 @@ function eliminarItemLS() {
   localStorage.setItem("carrito", cartLsNew);
 }
 
-const button1 = document.querySelector(".abrirMenu");
 
-button1.addEventListener("click", FuncioButton);
+
+//FUNCION PARA OCULTAR Y MOSTRAR MENU MQUERY
+const buttonMenu = document.querySelector(".abrirMenu");
+
+buttonMenu.addEventListener("click", FuncioButton);
 
 function FuncioButton(event) {
   const contenedorNav = document.querySelector(".nav1");
   const seleccionCruz = document.querySelector(".CerrarMenu");
   seleccionCruz.style.display = "block";
   contenedorNav.style.display = "flex";
-  button1.style.display = "none";
+  buttonMenu.style.display = "none";
   seleccionCruz.addEventListener("click", CerrarMenuAccion);
 }
 
@@ -301,7 +302,7 @@ function CerrarMenuAccion(event) {
   const cruz = event.target;
   const contenedorNav = document.querySelector(".nav1");
   contenedorNav.style.display = "none";
-  button1.style.display = "block";
+  buttonMenu.style.display = "block";
   const seleccionCruz = document.querySelector(".CerrarMenu");
   seleccionCruz.style.display = "none";
 }

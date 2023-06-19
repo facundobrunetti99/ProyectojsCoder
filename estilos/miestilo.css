@@ -431,10 +431,10 @@ body {
 
   .header1 {
     justify-content: space-between;
-    z-index: 30;
+    z-index: 2;
   }
   .nav1 {
-    z-index: 30;
+    z-index: 2;
     display: none;
     flex-direction: column;
     background-color: #5a5a5a;

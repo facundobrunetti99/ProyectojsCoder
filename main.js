@@ -28,9 +28,8 @@ const cargarProductos = (data) => {
       "col-md-4",
       "col-lg-3",
       "contendor--card"
-      
     );
-  
+
     divDelProducto.innerHTML = `
   <div class="card" style="width: 100%;">
   <img src="${product.img}" class="img-tamaño" alt="...">
@@ -205,7 +204,7 @@ function eliminarItemCart(idItem) {
             const valueCant = divCambiarCant.querySelector(
               ".cantidad__cart--item"
             );
-          
+
             element.cant--;
             valueCant.value = element.cant;
             sumaCarrito();
@@ -285,25 +284,24 @@ function eliminarItemLS() {
   localStorage.setItem("carrito", cartLsNew);
 }
 
-const button1=document.querySelector('.abrirMenu')
+const button1 = document.querySelector(".abrirMenu");
 
-  button1.addEventListener('click',FuncioButton)
+button1.addEventListener("click", FuncioButton);
 
-function FuncioButton(event){
-  const contenedorNav=document.querySelector('.nav1')
-  const  seleccionCruz=document.querySelector('.CerrarMenu')
-  seleccionCruz.style.display="block"
+function FuncioButton(event) {
+  const contenedorNav = document.querySelector(".nav1");
+  const seleccionCruz = document.querySelector(".CerrarMenu");
+  seleccionCruz.style.display = "block";
   contenedorNav.style.display = "flex";
-  button1.style.display="none";
-  seleccionCruz.addEventListener('click',CerrarMenuAccion)
+  button1.style.display = "none";
+  seleccionCruz.addEventListener("click", CerrarMenuAccion);
 }
 
-function CerrarMenuAccion(event){
-  const cruz=event.target;
-  const contenedorNav=document.querySelector('.nav1')
+function CerrarMenuAccion(event) {
+  const cruz = event.target;
+  const contenedorNav = document.querySelector(".nav1");
   contenedorNav.style.display = "none";
-  button1.style.display="block";
-  const  seleccionCruz=document.querySelector('.CerrarMenu')
-  seleccionCruz.style.display="none"
- 
+  button1.style.display = "block";
+  const seleccionCruz = document.querySelector(".CerrarMenu");
+  seleccionCruz.style.display = "none";
 }

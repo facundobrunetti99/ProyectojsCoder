@@ -4,6 +4,7 @@ const extraerProductos = async () => {
   const data = await resp.json();
   cargarProductos(data);
 };
+
 //TOTAL DEL PRECIO HTML
 const TotalHTML = document.querySelector(".texto__precio");
 let carrito = [];
@@ -290,12 +291,17 @@ const buttonMenu = document.querySelector(".abrirMenu");
 buttonMenu.addEventListener("click", FuncioButton);
 
 function FuncioButton(event) {
+ 
   const contenedorNav = document.querySelector(".nav1");
+
   const seleccionCruz = document.querySelector(".CerrarMenu");
   seleccionCruz.style.display = "block";
   contenedorNav.style.display = "flex";
+  contenedorNav.style.transition="display 2s all 2s"
   buttonMenu.style.display = "none";
+
   seleccionCruz.addEventListener("click", CerrarMenuAccion);
+ 
 }
 
 function CerrarMenuAccion(event) {
@@ -305,4 +311,5 @@ function CerrarMenuAccion(event) {
   buttonMenu.style.display = "block";
   const seleccionCruz = document.querySelector(".CerrarMenu");
   seleccionCruz.style.display = "none";
+
 }

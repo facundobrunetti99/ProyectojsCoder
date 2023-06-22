@@ -7,7 +7,11 @@
 body {
   background-color: #a8a8a8;
 }
-
+.parrafoBuscar{
+  font-size: 20px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  display: none;
+}
 .header {
   width: 100%;
   height: 80px;
@@ -61,19 +65,16 @@ body {
 
 .nav__button--input {
   height: 30px;
-  padding: 3px ;
-  border: none ;
+  padding: 3px;
+  border: none;
   background-color: #0c0b0b !important;
   color: #fff !important;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-    outline: none;
-    border-bottom: 1px solid #fff;
-    margin-right: 20px;
-
+  outline: none;
+  border-bottom: 1px solid #fff;
+  margin-right: 20px;
 }
-
-
 
 .nav__divcont__ul__li {
   list-style: none;
@@ -405,14 +406,11 @@ body {
   .header1 {
     display: flex;
     background-color: #0c0b0b;
-  
   }
 
   .nav1 {
     display: none;
-    
   }
-  
 
   .cerrarMenu {
     display: none !important;
@@ -436,7 +434,6 @@ body {
     justify-items: center;
   }
 
-  
   .nav__divcont__ul {
     flex-direction: column;
     background-color: #0c0b0b;
@@ -445,14 +442,12 @@ body {
     justify-content: center;
     justify-items: center;
   }
-  
+
   .nav__button {
     background-color: #0c0b0b;
     width: 93%;
     padding: 2px;
   }
-
-
 
   .conteiner__cart--item {
     height: 300px;
@@ -494,11 +489,11 @@ body {
     font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
       "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   }
-  
+
   .cantidad__cart--item {
     width: 30px;
   }
-  
+
   .eliminar__cart--item {
     width: 40px;
     background-color: #fff;
@@ -507,7 +502,7 @@ body {
     padding: 5px;
     font-size: 10px;
   }
-  
+
   .total__carrito {
     width: 100%;
     margin: auto;
@@ -533,7 +528,6 @@ body {
     margin-left: -20px;
   }
 
-
   .titulos__carrito {
     height: 100px;
     background-color: #ffffff;
@@ -549,9 +543,6 @@ body {
     border-bottom: 1px solid #178017;
     font-size: 15px;
   }
-  
-
-  
 }
 
 @media screen and (min-width: 1025px) {
@@ -563,8 +554,6 @@ body {
   .nav1 {
     display: flex !important;
     justify-content: space-between;
-
-    
   }
 
   .header {
@@ -580,8 +569,7 @@ body {
     border: none;
   }
 
-
-  .CerrarMenu{
+  .CerrarMenu {
     display: none !important;
   }
 
@@ -631,11 +619,6 @@ body {
     display: flex;
   }
 
- 
-
-
-
-
   .nav__divcont__ul__li {
     list-style: none;
   }
@@ -659,6 +642,4 @@ body {
     width: 50px;
     height: 50px;
   }
-
-
 }

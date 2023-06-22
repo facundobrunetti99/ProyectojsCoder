@@ -236,26 +236,38 @@ function cambiarValue() {
     }
   }
 }
+
+
+
+
 //BUSCAR ITEMS DE LOS PRODUCTOS
-function buscarItem() {
+
+document.addEventListener('keyup', e =>{
+if(e.target.matches('.nav__button--input')){
   const contenido = document.querySelector(".nav__button--input");
   const textoAbuscar = contenido.value.toLocaleLowerCase();
   const titulos = document.querySelectorAll(".card--title");
-
   titulos.forEach((T) => {
     let tituloArray = T.textContent.toLocaleLowerCase();
     let valor = tituloArray.includes(textoAbuscar);
-    if (textoAbuscar.length >= 3) {
+    if (textoAbuscar.length >= 2) {
       if (!valor) {
         const div = T.closest(".contendor--card");
         div.style.display = "none";
+       
       }
     } else {
       const div = T.closest(".contendor--card");
       div.style.display = "";
+      
     }
   });
 }
+
+
+})
+
+
 
 //FUNCION COMPRAR LIMPIAR CARRO 
 function limpiarCarrito() {

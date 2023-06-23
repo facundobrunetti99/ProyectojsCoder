@@ -417,6 +417,9 @@ body {
     width: 50px;
     height: 50px;
   }
+  .abrirMenu{
+    display:block;
+  }
 
   .header1 {
     justify-content: space-between;

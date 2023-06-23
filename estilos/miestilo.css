@@ -407,7 +407,16 @@ body {
     display: flex;
     background-color: #0c0b0b;
   }
-
+  .nav__log--img {
+  width: 40px;
+  height: 40px;
+  margin-left: 20px;
+  background-color: none;
+  padding: 5px;
+  }
+.nav__button--input{
+margin-bottom:10px;
+}
   .nav1 {
     display: none;
   }

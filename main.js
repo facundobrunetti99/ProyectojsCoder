@@ -314,9 +314,8 @@ function FuncioButton() {
   seleccionCruz.addEventListener("click", CerrarMenuAccion);
 }
 
-function CerrarMenuAccion(event) {
+function CerrarMenuAccion() {
   const iconPC = document.querySelector(".nav__logo");
-  const cruz = event.target;
   const contenedorNav = document.querySelector(".nav1");
   contenedorNav.style.display = "none";
   buttonMenu.style.display = "block";

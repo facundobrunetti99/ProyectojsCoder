@@ -79,10 +79,12 @@ function addTocart(i) {
     let cantI = (carrito[index].cant += 1);
     carritoDibujar(carrito[index]);
     sumaCarrito();
+    cambiarValue();
     const actualizarCart = JSON.parse(localStorage.getItem("carrito"));
     actualizarCart[index].cant = cantI;
     const item = JSON.stringify(actualizarCart);
     localStorage.setItem("carrito", item);
+   
   }
 
   cambiarNum();
@@ -109,7 +111,7 @@ function localStorageItem() {
     `;
     selecionCart.appendChild(div);
   });
-
+  cambiarValue();
   cambiarNum();
   sumaCarrito();
 }
@@ -148,7 +150,7 @@ function carritoDibujar(data) {
 
     `;
       selecionCart.appendChild(div);
-      cambiarValue(element.id, element.cant);
+      cambiarValue();
     }
   });
 }
@@ -227,10 +229,18 @@ function cambiarValue() {
     if (Number(item.value) < 1) {
       item.value = 1;
     } else {
-      carrito.forEach((element) => {
+      carrito.forEach((element,indice) => {
         if (titulo1.textContent === element.name) {
           element.cant = Number(item.value);
           sumaCarrito();
+          const index=indice;
+
+          const actualizarCart = JSON.parse(localStorage.getItem("carrito"));
+          actualizarCart[index].cant =   element.cant;
+          const item1 = JSON.stringify(actualizarCart);
+          localStorage.setItem("carrito", item1);
+
+
         }
       });
     }
@@ -316,6 +326,7 @@ function FuncioButton() {
 
 function CerrarMenuAccion() {
   const iconPC = document.querySelector(".nav__logo");
+ 
   const contenedorNav = document.querySelector(".nav1");
   contenedorNav.style.display = "none";
   buttonMenu.style.display = "block";

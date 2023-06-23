@@ -240,7 +240,7 @@ function cambiarValue() {
 //BUSCAR ITEMS DE LOS PRODUCTOS
 
 document.addEventListener("keyup", (e) => {
-  let contador=0;
+  let contador = 0;
   if (e.target.matches(".nav__button--input")) {
     const contenido = document.querySelector(".nav__button--input");
     const textoAbuscar = contenido.value.toLocaleLowerCase();
@@ -249,38 +249,28 @@ document.addEventListener("keyup", (e) => {
       let tituloArray = T.textContent.toLocaleLowerCase();
       let valor = tituloArray.includes(textoAbuscar);
       if (textoAbuscar.length >= 3) {
-        if (!valor) { 
+        if (!valor) {
           const div = T.closest(".contendor--card");
-          div.style.display="none";
-          if(div.style.display="none"){
-            contador=contador+1;
-           
+          div.style.display = "none";
+          if ((div.style.display = "none")) {
+            contador = contador + 1;
           }
         }
       } else {
         const div = T.closest(".contendor--card");
         div.style.display = "";
-        
       }
-
-
-      
     });
   }
 
- if(contador===20){
-  const div=document.querySelector('.parrafoBuscar')
-  div.style.display="block";
- }else{
-  const div=document.querySelector('.parrafoBuscar')
-  div.style.display="none";
- }
-
+  if (contador === 20) {
+    const div = document.querySelector(".parrafoBuscar");
+    div.style.display = "block";
+  } else {
+    const div = document.querySelector(".parrafoBuscar");
+    div.style.display = "none";
+  }
 });
-
-
-
-
 
 //FUNCION COMPRAR LIMPIAR CARRO
 function limpiarCarrito() {
@@ -313,26 +303,24 @@ const buttonMenu = document.querySelector(".abrirMenu");
 
 buttonMenu.addEventListener("click", FuncioButton);
 
-function FuncioButton(event) {
+function FuncioButton() {
   const contenedorNav = document.querySelector(".nav1");
-const iconPC=document.querySelector('.nav__logo');
-iconPC.style.display="none"
+  const iconPC = document.querySelector(".nav__logo");
+  iconPC.style.display = "none";
   const seleccionCruz = document.querySelector(".CerrarMenu");
   seleccionCruz.style.display = "block";
   contenedorNav.style.display = "flex";
-  contenedorNav.style.transition = "display 2s all 2s";
   buttonMenu.style.display = "none";
-
   seleccionCruz.addEventListener("click", CerrarMenuAccion);
 }
 
 function CerrarMenuAccion(event) {
-  const iconPC=document.querySelector('.nav__logo');
+  const iconPC = document.querySelector(".nav__logo");
   const cruz = event.target;
   const contenedorNav = document.querySelector(".nav1");
   contenedorNav.style.display = "none";
   buttonMenu.style.display = "block";
   const seleccionCruz = document.querySelector(".CerrarMenu");
   seleccionCruz.style.display = "none";
-  iconPC.style.display="block"
+  iconPC.style.display = "block";
 }

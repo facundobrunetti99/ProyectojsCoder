@@ -7,9 +7,9 @@
 body {
   background-color: #a8a8a8;
 }
-.parrafoBuscar{
+.parrafoBuscar {
   font-size: 20px;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   display: none;
 }
 .header {
@@ -26,7 +26,6 @@ body {
   display: grid;
   grid-template-columns: 1fr 3fr 1.5fr;
   grid-template-rows: 1fr;
-  
 }
 .nav__divcont {
   padding: 10px;
@@ -402,8 +401,6 @@ body {
 }
 
 @media screen and (max-width: 1024px) {
-  
-
   .nav1 {
     width: 100%;
     height: 80px;
@@ -411,46 +408,41 @@ body {
     display: grid;
     grid-template-columns: 1fr 3fr 1.5fr;
     grid-template-rows: 1fr;
-   
+
+    
   }
 
-
-
-  @media screen and (max-width: 1024px) {
     .header1 {
       display: flex;
       background-color: #0c0b0b;
       justify-content: space-between;
       z-index: 2;
       padding-bottom: 20px;
-      
+
     }
     .nav__log--img {
-    
-    width: 55px;
-    height: 55px;
-    margin-left: 20px;
-    background-color: none;
-    padding: 5px;
+      width: 55px;
+      height: 55px;
+      margin-left: 20px;
+      background-color: none;
+      padding: 5px;
     }
-  .nav__button--input{
-  margin-bottom:20px;
-  
-  margin:auto;
-  margin-left:0;
-  
-  }
-  
+    .nav__button--input {
+      margin-bottom: 20px;
+
+      margin: auto;
+      margin-left: 0;
+    }
+
     .cerrarMenu {
       display: none !important;
       width: 50px;
       height: 50px;
     }
-    .abrirMenu{
-      display:block;
+    .abrirMenu {
+      display: block;
     }
-  
-   
+
     .nav1 {
       z-index: 2;
       display: none;
@@ -461,8 +453,9 @@ body {
       height: 100%;
       justify-content: center;
       justify-items: center;
+     
     }
-  
+
     .nav__divcont__ul {
       flex-direction: column;
       background-color: #0c0b0b;
@@ -470,18 +463,17 @@ body {
       padding: 0;
       justify-content: center;
       justify-items: center;
-      
     }
-  .nav__divcont__ul__li {
-  margin-left: 0;
-  }
+    .nav__divcont__ul__li {
+      margin-left: 0;
+    }
     .nav__button {
       background-color: #0c0b0b;
       width: 93%;
       padding: 2px;
-      margin-bottom:10px;
+      margin-bottom: 10px;
     }
-  
+
     .conteiner__cart--item {
       height: 300px;
       background-color: #fff;
@@ -502,10 +494,10 @@ body {
       object-fit: contain;
       border-radius: 5px;
     }
-    .btn-primary{
+    .btn-primary {
       padding: 0 !important;
     }
-  
+
     .conteiner--title--img {
       display: flex;
       align-items: center;
@@ -525,11 +517,11 @@ body {
       font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
         "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
     }
-  
+
     .cantidad__cart--item {
       width: 30px;
     }
-  
+
     .eliminar__cart--item {
       width: 40px;
       background-color: #fff;
@@ -538,7 +530,7 @@ body {
       padding: 5px;
       font-size: 10px;
     }
-  
+
     .total__carrito {
       width: 100%;
       margin: auto;
@@ -563,7 +555,7 @@ body {
       border-radius: 10px;
       margin-left: -9px;
     }
-  
+
     .titulos__carrito {
       height: 100px;
       background-color: #ffffff;
@@ -579,7 +571,7 @@ body {
       border-bottom: 1px solid #178017;
       font-size: 15px;
     }
-  }
+  
 }
 
 @media screen and (min-width: 1025px) {
@@ -591,6 +583,7 @@ body {
   .nav1 {
     display: flex !important;
     justify-content: space-between;
+   
   }
 
   .header {
@@ -617,7 +610,6 @@ body {
     display: grid;
     grid-template-columns: 2fr 1fr;
     grid-template-rows: 1fr;
-    
   }
   .nav__divcont {
     padding: 10px;

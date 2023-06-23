@@ -48,7 +48,7 @@ const carritoAgregar = document.querySelector(".conteiner conteiner__cart");
 function addTocart(i) {
   Toastify({
     text: "Producto agregado!",
-    duration: 3000,
+    duration: 1000,
     destination: "https://github.com/apvarun/toastify-js",
     newWindow: true,
     close: true,

@@ -26,7 +26,7 @@ body {
   display: grid;
   grid-template-columns: 1fr 3fr 1.5fr;
   grid-template-rows: 1fr;
-  border-bottom: 1px solid #33ff80;
+ 
 }
 .nav__divcont {
   padding: 10px;
@@ -406,22 +406,35 @@ body {
   .header1 {
     display: flex;
     background-color: #0c0b0b;
+    justify-content: space-between;
+    z-index: 2;
   }
+  .nav__log--img {
+  
+  width: 55px;
+  height: 55px;
+  margin-left: 20px;
+  background-color: none;
+  padding: 5px;
+  }
+.nav__button--input{
+margin-bottom:20px;
 
-  .nav1 {
-    display: none;
-  }
+margin:auto;
+margin-left:0;
+
+}
 
   .cerrarMenu {
     display: none !important;
     width: 50px;
     height: 50px;
   }
-
-  .header1 {
-    justify-content: space-between;
-    z-index: 2;
+  .abrirMenu{
+    display:block;
   }
+
+ 
   .nav1 {
     z-index: 2;
     display: none;
@@ -441,12 +454,16 @@ body {
     padding: 0;
     justify-content: center;
     justify-items: center;
+    
   }
-
+.nav__divcont__ul__li {
+margin-left: 0;
+}
   .nav__button {
     background-color: #0c0b0b;
     width: 93%;
     padding: 2px;
+    margin-bottom:10px;
   }
 
   .conteiner__cart--item {
@@ -468,6 +485,9 @@ body {
     width: 70%;
     object-fit: contain;
     border-radius: 5px;
+  }
+  .btn-primary{
+    padding: 0 !important;
   }
 
   .conteiner--title--img {
@@ -525,7 +545,7 @@ body {
     width: 20px;
     height: 20px;
     border-radius: 10px;
-    margin-left: -20px;
+    margin-left: -9px;
   }
 
   .titulos__carrito {
@@ -580,7 +600,7 @@ body {
     display: grid;
     grid-template-columns: 2fr 1fr;
     grid-template-rows: 1fr;
-    border-bottom: 1px solid #33ff80;
+    
   }
   .nav__divcont {
     padding: 10px;

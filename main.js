@@ -315,7 +315,8 @@ buttonMenu.addEventListener("click", FuncioButton);
 
 function FuncioButton(event) {
   const contenedorNav = document.querySelector(".nav1");
-
+const iconPC=document.querySelector('.nav__logo');
+iconPC.style.display="none"
   const seleccionCruz = document.querySelector(".CerrarMenu");
   seleccionCruz.style.display = "block";
   contenedorNav.style.display = "flex";
@@ -326,10 +327,12 @@ function FuncioButton(event) {
 }
 
 function CerrarMenuAccion(event) {
+  const iconPC=document.querySelector('.nav__logo');
   const cruz = event.target;
   const contenedorNav = document.querySelector(".nav1");
   contenedorNav.style.display = "none";
   buttonMenu.style.display = "block";
   const seleccionCruz = document.querySelector(".CerrarMenu");
   seleccionCruz.style.display = "none";
+  iconPC.style.display="block"
 }

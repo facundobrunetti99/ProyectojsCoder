@@ -419,11 +419,20 @@ body {
   }
 .nav__button--input{
 margin-bottom:20px;
+<<<<<<< HEAD
 
 margin:auto;
 margin-left:0;
 
 }
+=======
+margin-left:40px;
+
+}
+  .nav1 {
+    display: none;
+  }
+>>>>>>> 6d73af8c2cdcffa86c11a74fc10272aac3883747
 
   .cerrarMenu {
     display: none !important;
@@ -432,6 +441,14 @@ margin-left:0;
   }
   .abrirMenu{
     display:block;
+<<<<<<< HEAD
+=======
+  }
+
+  .header1 {
+    justify-content: space-between;
+    z-index: 2;
+>>>>>>> 6d73af8c2cdcffa86c11a74fc10272aac3883747
   }
 
  

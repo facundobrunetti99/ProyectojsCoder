@@ -26,7 +26,7 @@ body {
   display: grid;
   grid-template-columns: 1fr 3fr 1.5fr;
   grid-template-rows: 1fr;
- 
+  
 }
 .nav__divcont {
   padding: 10px;
@@ -306,7 +306,6 @@ body {
   width: 90px;
   height: 40px;
   text-align: center;
-
   text-decoration: none;
   background-color: #175e17;
   color: #fff;
@@ -403,182 +402,181 @@ body {
 }
 
 @media screen and (max-width: 1024px) {
-  .header1 {
-    display: flex;
-    background-color: #0c0b0b;
-    justify-content: space-between;
-    z-index: 2;
-  }
-  .nav__log--img {
   
-  width: 55px;
-  height: 55px;
-  margin-left: 20px;
-  background-color: none;
-  padding: 5px;
-  }
-.nav__button--input{
-margin-bottom:20px;
-<<<<<<< HEAD
 
-margin:auto;
-margin-left:0;
-
-}
-=======
-margin-left:40px;
-
-}
   .nav1 {
-    display: none;
-  }
->>>>>>> 6d73af8c2cdcffa86c11a74fc10272aac3883747
-
-  .cerrarMenu {
-    display: none !important;
-    width: 50px;
-    height: 50px;
-  }
-  .abrirMenu{
-    display:block;
-<<<<<<< HEAD
-=======
+    width: 100%;
+    height: 80px;
+    background-color: #000000;
+    display: grid;
+    grid-template-columns: 1fr 3fr 1.5fr;
+    grid-template-rows: 1fr;
+   
   }
 
-  .header1 {
-    justify-content: space-between;
-    z-index: 2;
->>>>>>> 6d73af8c2cdcffa86c11a74fc10272aac3883747
-  }
 
- 
-  .nav1 {
-    z-index: 2;
-    display: none;
-    flex-direction: column;
-    background-color: #0c0b0b;
-    margin: none;
-    padding: 0;
-    height: 100%;
-    justify-content: center;
-    justify-items: center;
-  }
 
-  .nav__divcont__ul {
-    flex-direction: column;
-    background-color: #0c0b0b;
-    margin: none;
-    padding: 0;
-    justify-content: center;
-    justify-items: center;
+  @media screen and (max-width: 1024px) {
+    .header1 {
+      display: flex;
+      background-color: #0c0b0b;
+      justify-content: space-between;
+      z-index: 2;
+    }
+    .nav__log--img {
     
-  }
-.nav__divcont__ul__li {
-margin-left: 0;
-}
-  .nav__button {
-    background-color: #0c0b0b;
-    width: 93%;
-    padding: 2px;
-    margin-bottom:10px;
-  }
-
-  .conteiner__cart--item {
-    height: 300px;
-    background-color: #fff;
-    border-top: none;
-    justify-items: center;
-    margin: auto;
-    width: 100%;
-    margin: auto;
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr 1fr;
-    column-gap: 1px;
-    align-items: center;
-    border-bottom: 1px solid #0c0b0b;
-  }
-  .img__cart--item {
-    height: 100px;
-    width: 70%;
-    object-fit: contain;
-    border-radius: 5px;
-  }
-  .btn-primary{
-    padding: 0 !important;
-  }
-
-  .conteiner--title--img {
-    display: flex;
-    align-items: center;
-  }
-  .title__cart--item {
-    text-align: center;
-    width: 20%;
-    margin: auto;
-    margin-left: 15px;
-    font-size: 12px;
-    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-      "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  }
-  .precio__cart--item {
-    margin-left: 25px;
-    font-size: 12px;
-    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-      "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  }
-
-  .cantidad__cart--item {
-    width: 30px;
-  }
-
-  .eliminar__cart--item {
-    width: 40px;
-    background-color: #fff;
-    border: none;
-    color: #fff;
+    width: 55px;
+    height: 55px;
+    margin-left: 20px;
+    background-color: none;
     padding: 5px;
-    font-size: 10px;
+    }
+  .nav__button--input{
+  margin-bottom:20px;
+  
+  margin:auto;
+  margin-left:0;
+  
   }
-
-  .total__carrito {
-    width: 100%;
-    margin: auto;
-    text-align: center;
-    padding: 20px;
-    font-size: 20px;
-    background-color: #178017;
-    margin-top: 10px;
-    color: #fff;
+  
+    .cerrarMenu {
+      display: none !important;
+      width: 50px;
+      height: 50px;
+    }
+    .abrirMenu{
+      display:block;
+    }
+  
+   
+    .nav1 {
+      z-index: 2;
+      display: none;
+      flex-direction: column;
+      background-color: #0c0b0b;
+      margin: none;
+      padding: 0;
+      height: 100%;
+      justify-content: center;
+      justify-items: center;
+    }
+  
+    .nav__divcont__ul {
+      flex-direction: column;
+      background-color: #0c0b0b;
+      margin: none;
+      padding: 0;
+      justify-content: center;
+      justify-items: center;
+      
+    }
+  .nav__divcont__ul__li {
+  margin-left: 0;
   }
-  .precioHTML {
-    display: block;
-  }
-  .numCart_cant {
-    position: absolute;
-    text-align: center;
-    background-color: red;
-    font-size: 12px;
-    color: #fff;
-    width: 20px;
-    height: 20px;
-    border-radius: 10px;
-    margin-left: -9px;
-  }
-
-  .titulos__carrito {
-    height: 100px;
-    background-color: #ffffff;
-    border-top: none;
-    justify-items: center;
-    margin: auto;
-    width: 100%;
-    margin: auto;
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr 1fr;
-    column-gap: 1px;
-    align-items: center;
-    border-bottom: 1px solid #178017;
-    font-size: 15px;
+    .nav__button {
+      background-color: #0c0b0b;
+      width: 93%;
+      padding: 2px;
+      margin-bottom:10px;
+    }
+  
+    .conteiner__cart--item {
+      height: 300px;
+      background-color: #fff;
+      border-top: none;
+      justify-items: center;
+      margin: auto;
+      width: 100%;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      column-gap: 1px;
+      align-items: center;
+      border-bottom: 1px solid #0c0b0b;
+    }
+    .img__cart--item {
+      height: 100px;
+      width: 70%;
+      object-fit: contain;
+      border-radius: 5px;
+    }
+    .btn-primary{
+      padding: 0 !important;
+    }
+  
+    .conteiner--title--img {
+      display: flex;
+      align-items: center;
+    }
+    .title__cart--item {
+      text-align: center;
+      width: 20%;
+      margin: auto;
+      margin-left: 15px;
+      font-size: 12px;
+      font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+        "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    }
+    .precio__cart--item {
+      margin-left: 25px;
+      font-size: 12px;
+      font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+        "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    }
+  
+    .cantidad__cart--item {
+      width: 30px;
+    }
+  
+    .eliminar__cart--item {
+      width: 40px;
+      background-color: #fff;
+      border: none;
+      color: #fff;
+      padding: 5px;
+      font-size: 10px;
+    }
+  
+    .total__carrito {
+      width: 100%;
+      margin: auto;
+      text-align: center;
+      padding: 20px;
+      font-size: 20px;
+      background-color: #178017;
+      margin-top: 10px;
+      color: #fff;
+    }
+    .precioHTML {
+      display: block;
+    }
+    .numCart_cant {
+      position: absolute;
+      text-align: center;
+      background-color: red;
+      font-size: 12px;
+      color: #fff;
+      width: 20px;
+      height: 20px;
+      border-radius: 10px;
+      margin-left: -9px;
+    }
+  
+    .titulos__carrito {
+      height: 100px;
+      background-color: #ffffff;
+      border-top: none;
+      justify-items: center;
+      margin: auto;
+      width: 100%;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      column-gap: 1px;
+      align-items: center;
+      border-bottom: 1px solid #178017;
+      font-size: 15px;
+    }
   }
 }
 

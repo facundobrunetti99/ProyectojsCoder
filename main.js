@@ -258,7 +258,7 @@ document.addEventListener("keyup", (e) => {
     titulos.forEach((T) => {
       let tituloArray = T.textContent.toLocaleLowerCase();
       let valor = tituloArray.includes(textoAbuscar);
-      if (textoAbuscar.length >= 3) {
+      if (textoAbuscar.length >=3) {
         if (!valor) {
           const div = T.closest(".contendor--card");
           div.style.display = "none";
